@@ -1,5 +1,9 @@
 {
-    "extends": "airbnb",
+    "extends": [
+        "airbnb",
+        "prettier",
+        "prettier/react"
+    ] ,
     "rules": {
         "react/jsx-uses-react": "warn",
         "react/jsx-uses-vars": "warn",
@@ -29,7 +33,8 @@
     "plugins": [
         "react",
         "jsx-a11y",
-        "import"
+        "import",
+        "prettier"
     ],
     "parser": "babel-eslint",
     "parserOptions": {
