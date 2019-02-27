@@ -1,0 +1,14 @@
+.Container {
+    display: inline-block;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  
+  .Bars {
+    width: 27px;
+    height: 3px;
+    background-color: rgb(218, 218, 218);
+    margin: 4px 0;
+    transition: 0.4s;
+  }
