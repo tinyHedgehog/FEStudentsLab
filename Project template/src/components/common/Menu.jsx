@@ -1,5 +1,8 @@
 import React from 'react';
 import './Menu.css';
+import {
+  NavLink
+} from 'react-router-dom';
 
 const Menu = () => (
   <div className='menu'>
@@ -7,9 +10,9 @@ const Menu = () => (
     <div className='menu-navigation'>
       <nav>
         <ul>
-          <li><img /><a>Home</a></li>
-          <li><img /><a>Favorites</a></li>
-        </ul> 
+          <li><img /><NavLink to='/'>Home</NavLink></li>
+          <li><img /><NavLink to='/favorites_page'>Favorites</NavLink></li>
+        </ul>
       </nav>
     </div>
   </div>
