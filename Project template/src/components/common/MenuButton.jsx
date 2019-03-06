@@ -6,8 +6,8 @@ class MenuButton extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      isMenuHidden: true
+    this.state = { 
+      isMenuHidden: true 
     };
 
     this.openMenu = this.openMenu.bind(this);
@@ -19,7 +19,7 @@ class MenuButton extends React.Component {
 
   render() {
     return (
-      <div
+      <div 
         className="Container"
         onClick={this.openMenu}
       >

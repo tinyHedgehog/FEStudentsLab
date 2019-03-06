@@ -19,7 +19,7 @@ class AdvancedFilters extends React.Component {
       [e.target.id]: Number(e.target.value)
     });
   }
-
+  
   render() {
     const filtersRange = {
       minAbv: 2,

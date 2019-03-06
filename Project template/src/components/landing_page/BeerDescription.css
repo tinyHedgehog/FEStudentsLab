@@ -1,4 +1,5 @@
 .beer-description{
+    align-self: flex-end;
     background-color: rgb(110, 110, 110);
     color: rgb(255, 255, 255);
     padding: 5%;

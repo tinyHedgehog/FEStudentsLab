@@ -9,14 +9,14 @@ class SearchBar extends React.Component {
 
     this.state = {
       areFiltersHidden: true
-    };
+    }
     this.showFilters = this.showFilters.bind(this);
   }
 
   showFilters() {
     this.setState({
       areFiltersHidden: !this.state.areFiltersHidden
-    });
+    })
   }
 
   render() {
@@ -26,7 +26,7 @@ class SearchBar extends React.Component {
           <input type='text' placeholder='Search beers...' className='search-input'/>
           <input className='search-icon' type='image' src={searchIcon} />
           <input type='button' value='Advanced Filters' onClick={this.showFilters} />
-        </div>
+        </div> 
         {!this.state.areFiltersHidden && <AdvancedFilters />}
       </div>
     );

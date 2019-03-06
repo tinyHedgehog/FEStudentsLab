@@ -1,24 +1,28 @@
 import React from 'react';
-import {
+import Header from './common/Header';
+import { 
   Route,
   HashRouter,
   Switch
 } from 'react-router-dom';
-import Header from './common/Header';
-import Home from './landing_page/index';
-import FavoritesPage from './favorites_page/index';
+import SearchResultContainer from '../containers/SearchResultContainer';
+import FavoritesContainer from '../containers/FavoritesContainer';
 import './index.css';
 
-const App = () => (
-  <HashRouter>
-    <div>
-      <Header />
-      <Switch>
-        <Route exact path='/' component={Home} />
-        <Route path='/favorites_page' component={FavoritesPage} />
-      </Switch>
-    </div>
-  </HashRouter>
-);
+class App extends React.Component {
+  render() {
+    return(
+      <HashRouter>
+        <div onClick={this.checkState}>
+          <Header />
+          <Switch>
+            <Route exact path='/' component={SearchResultContainer}  /> 
+            <Route path='/favorites_page' component={FavoritesContainer} />
+          </Switch>
+        </div>
+      </HashRouter>
+    );
+  }
+}
 
 export default App;

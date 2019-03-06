@@ -5,14 +5,12 @@ class FavoritesPage extends React.Component {
   render() {
     return(
       <div className='search-result'>
-        <FavoriteBeer />
-        <FavoriteBeer />
-        <FavoriteBeer />
-        <FavoriteBeer />
-        <FavoriteBeer />
+        {this.props.favorite.map(item => (
+          <FavoriteBeer key={item.id} item={item} removeFromFavorite={this.props.removeFromFavorite}/>
+        ))}
       </div>
     );
   }
-}
+};
 
 export default FavoritesPage;
