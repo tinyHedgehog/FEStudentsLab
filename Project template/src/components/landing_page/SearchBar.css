@@ -1,0 +1,16 @@
+.search-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1%;
+}
+
+.search-align{
+  display: flex;
+}
+
+.search-icon{
+    width: 20px;
+    height: 20px;
+}

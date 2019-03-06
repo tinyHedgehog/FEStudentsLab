@@ -1,0 +1,14 @@
+.display-beer{
+    border: 1px solid rgb(0, 0, 0);
+    margin: 0.8%;
+    width: calc(100% * (1/3) - 17%);
+}
+
+.beer-image{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    border: 1px solid rgb(0, 0, 0); 
+    border-radius: 50%;
+}
