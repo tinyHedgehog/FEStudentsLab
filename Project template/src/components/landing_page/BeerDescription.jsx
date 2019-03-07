@@ -1,31 +1,38 @@
 import React from 'react';
 import './BeerDescription.css';
 
-class BeerDescription extends React.Component {
-  render() {
-    return (
-      <div className='beer-description'>
-        <p className='beer-title'>{this.props.title}</p>
-        <p className='beer-tagline'>{this.props.tagline}</p>
-        <button className='beer-buttons'>OPEN</button>
-        {!this.props.isFavorite && 
-          <button 
-            className='beer-buttons' 
-            onClick={e => this.props.addToFavorite(this.props.itemInfo)}
-          >
-            FAVORITE
-          </button>
-        }
-        {this.props.isFavorite && 
-          <button 
-            className='beer-buttons'
-            onClick={e => this.props.removeFromFavorite(this.props.itemInfo.id)}
-          >
-            REMOVE FAVORITE
-          </button>}
-      </div>
-    );
+const BeerDescription = (props) => {
+  let addToFavorite = () => {
+    props.addToFavorite(props.itemInfo)
   }
+
+  let removeFromFavorite = () => {
+    props.removeFromFavorite(props.itemInfo.id)
+  }
+
+  return(
+    <div className='beer-description'>
+    <p className='beer-title'>{props.title}</p>
+    <p className='beer-tagline'>{props.tagline}</p>
+    <button className='beer-buttons'>Open</button>
+    {!props.isFavorite && 
+      <button 
+        className='beer-buttons' 
+        onClick={addToFavorite}
+      >
+      Favorite
+      </button>
+    }
+    {props.isFavorite && 
+      <button 
+        className='beer-buttons'
+        onClick={removeFromFavorite}
+    >
+      Remove Favorite
+      </button>
+    }
+  </div>
+  )
 }
 
 export default BeerDescription;

@@ -3,15 +3,17 @@ import { render } from 'react-dom';
 import thunkMiddleware from 'redux-thunk';
 import { createLogger } from 'redux-logger';
 import { createStore, applyMiddleware } from 'redux';
-import { fetchData } from './actions';
+import fetchData from './api_level/api';
 import rootReducer from './reducers';
 import { Provider } from 'react-redux';
-import App from './components/index';
+import App from './components/App';
 import './index.css';
 
+const STATE = 'state';
+
 const loggerMiddleware = createLogger();
-const persistedState = localStorage.getItem('state') ? 
-  JSON.parse(localStorage.getItem('state')) : {};
+const persistedState = localStorage.getItem(STATE) ? 
+  JSON.parse(localStorage.getItem(STATE)) : {};
 
 const store = createStore(
   rootReducer,
@@ -25,7 +27,7 @@ const store = createStore(
 store.dispatch(fetchData());
 
 store.subscribe(() => {
-  localStorage.setItem('state', JSON.stringify(store.getState()))
+  localStorage.setItem(STATE, JSON.stringify(store.getState()))
 });
 
 render(

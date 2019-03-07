@@ -1,7 +1,7 @@
 import React from 'react';
 import FavoriteBeer from './FavoriteBeer';
 
-class FavoritesPage extends React.Component {
+class FavoritesPage extends React.PureComponent {
   render() {
     return(
       <div className='search-result'>

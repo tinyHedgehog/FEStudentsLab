@@ -7,8 +7,8 @@ import {
 
 const mapStateToProps = state => {
   return {
-    catalog: state.requestData.catalog,
-    favorite: state.favoriteReducer.favorite
+    catalog: state.requestData,
+    favorite: state.favorite
   };
 };
 

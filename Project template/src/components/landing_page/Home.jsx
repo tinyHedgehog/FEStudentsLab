@@ -3,21 +3,15 @@ import SearchBar from './SearchBar';
 import BeerCard from './BeerCard';
 import './Home.css';
 
-class Home extends React.Component { 
+class Home extends React.PureComponent { 
   render() {
-    let display;
-
-    if(this.props.catalog == undefined){
-      display = false;
-    } else {
-      display = true;
-    }
+    let isCatalogDisplayed = this.props.catalog && this.props.catalog.length;
 
     return (
       <div>
         <SearchBar />
         <div className='search-result'>
-          {display && this.props.catalog.map((item) => (
+          {isCatalogDisplayed && this.props.catalog.map((item) => (
             <BeerCard
               key={item.id}
               item={item}

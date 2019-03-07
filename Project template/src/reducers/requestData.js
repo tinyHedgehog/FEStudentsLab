@@ -1,16 +1,12 @@
 import { REQUEST_DATA } from '../actions/index';
 
 const requestData = (
-  state = {
-    catalog: []
-  },
+  state = [],
   action
 ) => {
   switch(action.type) {
     case REQUEST_DATA:
-      return Object.assign({}, state, {
-        catalog: action.data
-      });
+      return action.data;
     default:
       return state;
   }

@@ -4,7 +4,7 @@ import { removeFromFavorite } from '../actions/index';
 
 const mapStateToProps = state => {
   return {
-    favorite: state.favoriteReducer.favorite
+    favorite: state.favorite
   };
 };
 

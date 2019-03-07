@@ -2,26 +2,24 @@ import React from 'react';
 import Menu from './Menu';
 import './MenuButton.css';
 
-class MenuButton extends React.Component {
+class MenuButton extends React.PureComponent {
   constructor(props) {
     super(props);
 
     this.state = { 
       isMenuHidden: true 
     };
-
-    this.openMenu = this.openMenu.bind(this);
-  }
-
-  openMenu() {
-      this.setState({isMenuHidden: !this.state.isMenuHidden});
   }
 
   render() {
+    let openMenu = () => {
+      this.setState({isMenuHidden: !this.state.isMenuHidden});
+  }
+
     return (
       <div 
         className="Container"
-        onClick={this.openMenu}
+        onClick={openMenu}
       >
         <div className="Bars" />
         <div className="Bars" />

@@ -2,7 +2,7 @@ import React from 'react';
 import BeerDescription from './BeerDescription';
 import './BeerCard.css';
 
-class BeerCard extends React.Component {
+class BeerCard extends React.PureComponent {
   render() {
     let item = this.props.item;
 

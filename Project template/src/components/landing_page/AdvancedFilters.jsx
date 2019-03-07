@@ -1,7 +1,7 @@
 import React from 'react';
 import './AdvancedFilters.css';
 
-class AdvancedFilters extends React.Component {
+class AdvancedFilters extends React.PureComponent {
   constructor(props){
     super(props);
 
@@ -10,16 +10,8 @@ class AdvancedFilters extends React.Component {
       ibuValue: 0,
       ebcValue: 0
     };
-
-    this.changeFilterValue = this.changeFilterValue.bind(this);
   }
 
-  changeFilterValue(e) {
-    this.setState({
-      [e.target.id]: Number(e.target.value)
-    });
-  }
-  
   render() {
     const filtersRange = {
       minAbv: 2,
@@ -30,6 +22,12 @@ class AdvancedFilters extends React.Component {
       maxEbc: 80 
     };
 
+    let changeFilterValue = (e) => {
+      this.setState({
+        [e.target.id]: Number(e.target.value)
+      });
+    }
+
     return (
       <div className='advanced-filters'>
         <span>Alcohol by volume: {this.state.abvValue}</span>
@@ -38,7 +36,7 @@ class AdvancedFilters extends React.Component {
           min={filtersRange.minAbv}
           max={filtersRange.maxAbv}
           value={this.state.abvValue}
-          onChange={this.changeFilterValue}
+          onChange={changeFilterValue}
           className='slider'
           id='abvValue'
         />
@@ -48,7 +46,7 @@ class AdvancedFilters extends React.Component {
           min={filtersRange.minIbu}
           max={filtersRange.maxIbu}
           value={this.state.ibuValue}
-          onChange={this.changeFilterValue}
+          onChange={changeFilterValue}
           className='slider'
           id='ibuValue'
         />
@@ -58,7 +56,7 @@ class AdvancedFilters extends React.Component {
           min={filtersRange.minEbc}
           max={filtersRange.maxEbc}
           value={this.state.ebcValue}
-          onChange={this.changeFilterValue}
+          onChange={changeFilterValue}
           className='slider'
           id='ebcValue'
         />
@@ -66,6 +64,5 @@ class AdvancedFilters extends React.Component {
     );
   }
 }
-
 
 export default AdvancedFilters;
