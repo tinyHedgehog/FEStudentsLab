@@ -3,10 +3,11 @@ import CommonBeerInfo from './CommonBeerInfo';
 import Properties from './Properties';
 import FoodPairing from './FoodPairing';
 import Brewing from './Brewing';
-import './Details.css';
+import './BeerDetails.css';
 
-const Details = (props) => {
-  const item = props.catalog[parseInt(props.match.params.id) - 1];
+const BeerDetails = (props) => {
+  const item = props.catalog[props.id - 1];
+  console.log(props);
 
   return(
     <div className='details-page'>
@@ -16,7 +17,7 @@ const Details = (props) => {
       tagline={item.tagline}
       description={item.description}
       img={item.image_url}
-      isFavorite={props.favorite.some((favItem) => favItem.id == item.id )}
+      isFavorite={props.isFavorite}
       addToFavorite={props.addToFavorite}
       removeFromFavorite={props.removeFromFavorite}
     />
@@ -38,4 +39,4 @@ const Details = (props) => {
   );
 }
 
-export default Details;
+export default BeerDetails;
