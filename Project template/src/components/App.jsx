@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom';
 import SearchResultContainer from '../containers/SearchResultContainer';
 import FavoritesContainer from '../containers/FavoritesContainer';
-import DetailsContainer from '../containers/DetailsContainer';
+import BeerDetailsContainer from '../containers/BeerDetailsContainer';
 import './App.css';
 
 const App = () => (
@@ -17,7 +17,7 @@ const App = () => (
       <Switch>
         <Route exact path='/' component={SearchResultContainer}  /> 
         <Route path='/favorites_page' component={FavoritesContainer} />
-        <Route path='/details/:id' component={DetailsContainer} />
+        <Route path='/details/:id' component={BeerDetailsContainer} />
       </Switch>
     </div>
   </HashRouter>
