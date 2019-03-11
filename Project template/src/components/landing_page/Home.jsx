@@ -3,7 +3,7 @@ import SearchBar from './SearchBar';
 import BeerCard from './BeerCard';
 import './Home.css';
 
-class Home extends React.PureComponent { 
+class Home extends React.PureComponent {
   render() {
     let isCatalogDisplayed = this.props.catalog && this.props.catalog.length;
 

@@ -11,15 +11,15 @@ class MenuButton extends React.PureComponent {
     };
   }
 
-  render() {
-    let openMenu = () => {
-      this.setState({isMenuHidden: !this.state.isMenuHidden});
+  openMenu = () => {
+    this.setState({isMenuHidden: !this.state.isMenuHidden});
   }
 
+  render() {
     return (
       <div 
         className="Container"
-        onClick={openMenu}
+        onClick={this.openMenu}
       >
         <div className="Bars" />
         <div className="Bars" />

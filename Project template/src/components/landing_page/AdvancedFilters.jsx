@@ -12,6 +12,12 @@ class AdvancedFilters extends React.PureComponent {
     };
   }
 
+  changeFilterValue = (e) => {
+    this.setState({
+      [e.target.id]: Number(e.target.value)
+    });
+  }
+
   render() {
     const filtersRange = {
       minAbv: 2,
@@ -22,12 +28,6 @@ class AdvancedFilters extends React.PureComponent {
       maxEbc: 80 
     };
 
-    let changeFilterValue = (e) => {
-      this.setState({
-        [e.target.id]: Number(e.target.value)
-      });
-    }
-
     return (
       <div className='advanced-filters'>
         <span>Alcohol by volume: {this.state.abvValue}</span>
@@ -36,7 +36,7 @@ class AdvancedFilters extends React.PureComponent {
           min={filtersRange.minAbv}
           max={filtersRange.maxAbv}
           value={this.state.abvValue}
-          onChange={changeFilterValue}
+          onChange={this.changeFilterValue}
           className='slider'
           id='abvValue'
         />
@@ -46,7 +46,7 @@ class AdvancedFilters extends React.PureComponent {
           min={filtersRange.minIbu}
           max={filtersRange.maxIbu}
           value={this.state.ibuValue}
-          onChange={changeFilterValue}
+          onChange={this.changeFilterValue}
           className='slider'
           id='ibuValue'
         />
@@ -56,7 +56,7 @@ class AdvancedFilters extends React.PureComponent {
           min={filtersRange.minEbc}
           max={filtersRange.maxEbc}
           value={this.state.ebcValue}
-          onChange={changeFilterValue}
+          onChange={this.changeFilterValue}
           className='slider'
           id='ebcValue'
         />

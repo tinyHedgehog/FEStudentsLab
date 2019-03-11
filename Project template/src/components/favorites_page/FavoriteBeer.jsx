@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import './FavoriteBeer.css';
 
 const FavoriteBeer = (props) => {
-  let removeFromFavorite = () => {
+  const removeFromFavorite = useCallback(() => {
     props.removeFromFavorite(props.item.id)
-  }
+  },[]); 
 
   return(
     <div className='favorite-beer'>

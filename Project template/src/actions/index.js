@@ -1,8 +1,13 @@
+import api from '../api_level/api';
+
 export const REQUEST_DATA = 'REQUEST_DATA';
-export const requestData = data => ({
-  type: REQUEST_DATA,
-  data
-});
+export function requestData() {
+  return dispatch => api.getFirstItems()
+    .then(response => dispatch({
+      type: REQUEST_DATA,
+      data: response.data
+    }));
+}
 
 export const ADD_TO_FAVORITE = 'ADD_TO_FAVORITE';
 export const addToFavorite = favorite => ({

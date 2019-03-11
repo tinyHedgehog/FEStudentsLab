@@ -1,14 +1,14 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import './BeerDescription.css';
 
 const BeerDescription = (props) => {
-  let addToFavorite = () => {
+  const addToFavorite = useCallback(() => {
     props.addToFavorite(props.itemInfo)
-  }
+  },[]); 
 
-  let removeFromFavorite = () => {
+  const removeFromFavorite = useCallback(() => {
     props.removeFromFavorite(props.itemInfo.id)
-  }
+  },[]); 
 
   return(
     <div className='beer-description'>

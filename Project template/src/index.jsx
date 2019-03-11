@@ -3,7 +3,7 @@ import { render } from 'react-dom';
 import thunkMiddleware from 'redux-thunk';
 import { createLogger } from 'redux-logger';
 import { createStore, applyMiddleware } from 'redux';
-import fetchData from './api_level/api';
+import { requestData } from './actions';
 import rootReducer from './reducers';
 import { Provider } from 'react-redux';
 import App from './components/App';
@@ -24,7 +24,7 @@ const store = createStore(
   )
 );
 
-store.dispatch(fetchData());
+store.dispatch(requestData());
 
 store.subscribe(() => {
   localStorage.setItem(STATE, JSON.stringify(store.getState()))
