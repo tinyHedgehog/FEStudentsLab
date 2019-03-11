@@ -1,7 +1,7 @@
 import React from 'react';
 import './AdvancedFilters.css';
 
-class AdvancedFilters extends React.Component {
+class AdvancedFilters extends React.PureComponent {
   constructor(props){
     super(props);
 
@@ -10,11 +10,9 @@ class AdvancedFilters extends React.Component {
       ibuValue: 0,
       ebcValue: 0
     };
-
-    this.changeFilterValue = this.changeFilterValue.bind(this);
   }
 
-  changeFilterValue(e) {
+  changeFilterValue = (e) => {
     this.setState({
       [e.target.id]: Number(e.target.value)
     });
@@ -66,6 +64,5 @@ class AdvancedFilters extends React.Component {
     );
   }
 }
-
 
 export default AdvancedFilters;

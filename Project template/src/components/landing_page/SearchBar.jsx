@@ -3,20 +3,19 @@ import AdvancedFilters from './AdvancedFilters';
 import searchIcon from './search-icon.png';
 import './SearchBar.css';
 
-class SearchBar extends React.Component {
+class SearchBar extends React.PureComponent {
   constructor(props){
     super(props);
 
     this.state = {
       areFiltersHidden: true
-    };
-    this.showFilters = this.showFilters.bind(this);
+    }
   }
 
-  showFilters() {
+  showFilters = () => {
     this.setState({
       areFiltersHidden: !this.state.areFiltersHidden
-    });
+    })
   }
 
   render() {
@@ -26,7 +25,7 @@ class SearchBar extends React.Component {
           <input type='text' placeholder='Search beers...' className='search-input'/>
           <input className='search-icon' type='image' src={searchIcon} />
           <input type='button' value='Advanced Filters' onClick={this.showFilters} />
-        </div>
+        </div> 
         {!this.state.areFiltersHidden && <AdvancedFilters />}
       </div>
     );

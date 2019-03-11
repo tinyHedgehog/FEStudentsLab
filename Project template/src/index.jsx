@@ -1,9 +1,38 @@
 import React from 'react';
 import { render } from 'react-dom';
-import App from './components/index';
+import thunkMiddleware from 'redux-thunk';
+import { createLogger } from 'redux-logger';
+import { createStore, applyMiddleware } from 'redux';
+import { requestData } from './actions';
+import rootReducer from './reducers';
+import { Provider } from 'react-redux';
+import App from './components/App';
 import './index.css';
 
+const STATE = 'state';
+
+const loggerMiddleware = createLogger();
+const persistedState = localStorage.getItem(STATE) ? 
+  JSON.parse(localStorage.getItem(STATE)) : {};
+
+const store = createStore(
+  rootReducer,
+  persistedState,
+  applyMiddleware(
+    thunkMiddleware,
+    loggerMiddleware
+  )
+);
+
+store.dispatch(requestData());
+
+store.subscribe(() => {
+  localStorage.setItem(STATE, JSON.stringify(store.getState()))
+});
+
 render(
-  <App />,
+  <Provider store={store}>
+    <App />
+  </Provider>,
   document.getElementById('root'),
 );
