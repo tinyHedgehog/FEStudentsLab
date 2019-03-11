@@ -7,7 +7,7 @@ class BeerCard extends React.PureComponent {
     let item = this.props.item;
 
     return (
-      <div className="display-beer">
+      <div className="beer-card"  id={item.id}>
         <img className='beer-image' src={item.image_url}/>
         <BeerDescription 
           itemInfo={item}

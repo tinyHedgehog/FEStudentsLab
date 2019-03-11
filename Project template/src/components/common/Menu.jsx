@@ -10,8 +10,8 @@ const Menu = () => (
     <div className='menu-navigation'>
       <nav>
         <ul>
-          <li><img /><NavLink to='/'>Home</NavLink></li>
-          <li><img /><NavLink to='/favorites_page'>Favorites</NavLink></li>
+          <li className='menu-li'><img /><NavLink to='/'>Home</NavLink></li>
+          <li className='menu-li'><img /><NavLink to='/favorites_page'>Favorites</NavLink></li>
         </ul>
       </nav>
     </div>
