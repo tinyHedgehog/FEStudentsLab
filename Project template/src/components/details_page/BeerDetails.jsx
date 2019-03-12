@@ -6,33 +6,31 @@ import Brewing from './Brewing';
 import './BeerDetails.css';
 
 const BeerDetails = (props) => {
-  const item = props.catalog[props.id - 1];
-
   return(
     <div className='details-page'>
     <CommonBeerInfo
-      itemInfo={item}
-      title={item.name} 
-      tagline={item.tagline}
-      description={item.description}
-      img={item.image_url}
-      isFavorite={props.isFavorite}
+      itemInfo={props.item}
+      title={props.item.name} 
+      tagline={props.item.tagline}
+      description={props.item.description}
+      img={props.item.image_url}
+      isFavorite={props.favorite.some((favItem) => favItem.id == props.item.id )}
       addToFavorite={props.addToFavorite}
       removeFromFavorite={props.removeFromFavorite}
     />
     <div className='props-and-food'>
       <Properties
-        abv={item.abv}
-        ibu={item.ibu}
-        ebc={item.ebc}
+        abv={props.item.abv}
+        ibu={props.item.ibu}
+        ebc={props.item.ebc}
       />
-      <FoodPairing foodPairing={item.food_pairing} />
+      <FoodPairing foodPairing={props.item.food_pairing} />
     </div>
     <Brewing
-      brewersTips={item.brewers_tips}
-      boilVolume={item.boil_volume}
-      ingredients={item.ingredients}
-      method={item.method}
+      brewersTips={props.item.brewers_tips}
+      boilVolume={props.item.boil_volume}
+      ingredients={props.item.ingredients}
+      method={props.item.method}
     />
     </div>
   );

@@ -9,7 +9,7 @@ const mapStateToProps = (state, onwProps) => {
   return {
     catalog: state.requestData,
     favorite: state.favorite,
-    id: Number(onwProps.match.params.id),
+    item: state.requestData[Number(onwProps.match.params.id) - 1] ,
     isFavorite: state.favorite.some((favItem) => favItem.id === Number(onwProps.match.params.id))
   };
 };
