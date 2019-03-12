@@ -1,4 +1,5 @@
 import React, { useCallback } from 'react';
+import { NavLink } from 'react-router-dom';
 import './FavoriteBeer.css';
 
 const FavoriteBeer = (props) => {
@@ -12,7 +13,7 @@ const FavoriteBeer = (props) => {
       <h3>{props.item.name}</h3>
       <p className='favbeer-p'>{props.item.tagline}</p>
       <p className='favbeer-p'>{props.item.description}</p>
-      <button className='beer-buttons-fav'>Open</button>
+      <button className='beer-buttons-fav'><NavLink to={`/details/${props.item.id}`}>Open</NavLink></button>
       <button className='beer-buttons-fav' onClick={removeFromFavorite}>Remove Favorite</button>
     </div>
   )
