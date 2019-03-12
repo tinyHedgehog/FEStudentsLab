@@ -14,7 +14,7 @@ const BeerDetails = (props) => {
       tagline={props.item.tagline}
       description={props.item.description}
       img={props.item.image_url}
-      isFavorite={props.favorite.some((favItem) => favItem.id == props.item.id )}
+      isFavorite={props.isFavorite}
       addToFavorite={props.addToFavorite}
       removeFromFavorite={props.removeFromFavorite}
     />
