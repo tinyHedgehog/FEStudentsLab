@@ -1,4 +1,4 @@
-import { ADD_TO_FAVORITE, REMOVE_FROM_FAVORITE } from '../actions/index';
+import { ADD_TO_FAVORITE, REMOVE_FROM_FAVORITE } from '../actions/actionTypes';
 
 const favorite = (
   state = [],

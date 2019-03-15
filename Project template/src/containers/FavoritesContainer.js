@@ -1,6 +1,9 @@
 import { connect } from 'react-redux';
 import Favorites from '../components/favorites_page/Favorites';
-import { removeFromFavorite } from '../actions/index';
+import {
+  removeFromFavorite,
+  getExactBeer
+} from '../actions/index';
 
 const mapStateToProps = state => {
   return {
@@ -9,7 +12,8 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = {
-  removeFromFavorite
+  removeFromFavorite,
+  getExactBeer
 };
 
 export default connect(

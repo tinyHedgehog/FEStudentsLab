@@ -18,10 +18,14 @@ class AdvancedFilters extends React.PureComponent {
     });
   }
 
+  applyFilters = () => {
+    this.props.applyFilters(this.state.abvValue, this.state.ebcValue, this.state.ibuValue)
+  }
+
   render() {
     const filtersRange = {
-      minAbv: 2,
-      maxAbv: 14,
+      minAbv: 2.0,
+      maxAbv: 14.0,
       minIbu: 0,
       maxIbu: 120,
       minEbc: 4,
@@ -37,6 +41,7 @@ class AdvancedFilters extends React.PureComponent {
           max={filtersRange.maxAbv}
           value={this.state.abvValue}
           onChange={this.changeFilterValue}
+          onMouseUp={this.applyFilters}
           className='slider'
           id='abvValue'
         />
@@ -47,6 +52,7 @@ class AdvancedFilters extends React.PureComponent {
           max={filtersRange.maxIbu}
           value={this.state.ibuValue}
           onChange={this.changeFilterValue}
+          onMouseUp={this.applyFilters}
           className='slider'
           id='ibuValue'
         />
@@ -57,6 +63,7 @@ class AdvancedFilters extends React.PureComponent {
           max={filtersRange.maxEbc}
           value={this.state.ebcValue}
           onChange={this.changeFilterValue}
+          onMouseUp={this.applyFilters}
           className='slider'
           id='ebcValue'
         />
