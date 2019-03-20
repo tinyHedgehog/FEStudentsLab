@@ -5,3 +5,4 @@ export const REMOVE_FROM_FAVORITE = 'REMOVE_FROM_FAVORITE';
 export const GET_EXACT_BEER = 'GET_EXACT_BEER';
 export const SEARCH_BEERS = 'SEARCH_BEERS';
 export const APPLY_FILTERS = 'APPLY_FILTERS';
+export const CHANGE_PAGE = 'CHANGE_PAGE';

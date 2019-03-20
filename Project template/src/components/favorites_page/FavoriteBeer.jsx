@@ -8,9 +8,23 @@ const FavoriteBeer = (props) => {
     props.getExactBeer(props.item.id)
   },[]);
 
-  const removeFromFavorite = useCallback(() => {
-    props.removeFromFavorite(props.item.id)
-  },[]);
+  const removeFromFavorite = useCallback((e) => {
+    props.removeFromFavorite(props.item.id);
+    updatePage();
+    remainingBeersController(e);
+  },[props.item.id, props.favorite]);
+
+  const updatePage = useCallback(() => {
+    props.changePage(
+      props.currentPage,
+      props.favorite.filter(item => item.id !== props.item.id)
+    )
+  },[props.currentPage, props.favorite]);
+
+  const remainingBeersController = useCallback((e) => {
+    e.target.parentNode.parentNode.children.length == 2 ?
+    props.changePage(props.currentPage - 1, props.favorite) : '';
+  },[props.currentPage, props.favorite]);
 
   return(
     <div className='favorite-beer'>
@@ -19,10 +33,14 @@ const FavoriteBeer = (props) => {
       <img className='favbeer-image' src={props.item.image_url} />
       }
       <h3>{props.item.name}</h3>
-      <p className='favbeer-p'>{props.item.tagline}</p>
-      <p className='favbeer-p'>{props.item.description}</p>
-      <button className='beer-buttons-fav' onClick={getExactBeer}><NavLink to={`/details/${props.item.id}`}>Open</NavLink></button>
-      <button className='beer-buttons-fav' onClick={removeFromFavorite}>Remove Favorite</button>
+      <p className='favbeer-tagline'>{props.item.tagline}</p>
+      <p className='favbeer-description'>{props.item.description}</p>
+      <button className='favbeer-button' onClick={getExactBeer}>
+        <NavLink to={`/details/${props.item.id}`}>Open</NavLink>
+      </button>
+      <button className='favbeer-button' onClick={removeFromFavorite}>
+        Remove Favorite
+      </button>
     </div>
   )
 }

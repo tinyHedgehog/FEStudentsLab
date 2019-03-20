@@ -1,12 +1,24 @@
 import { connect } from 'react-redux';
 import App from '../components/App';
-import { addNextItems } from '../actions/index';
+import {
+  addNextItems,
+  getExactBeer,
+  changePage
+} from '../actions/index';
+
+const mapStateToProps = (state) => {
+  return {
+    favorite: state.favorite
+  };
+};
 
 const mapDispatchToProps = {
-  addNextItems
+  addNextItems,
+  getExactBeer,
+  changePage
 };
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(App);

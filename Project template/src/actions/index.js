@@ -5,7 +5,8 @@ import {
   REMOVE_FROM_FAVORITE,
   GET_EXACT_BEER,
   SEARCH_BEERS,
-  APPLY_FILTERS
+  APPLY_FILTERS,
+  CHANGE_PAGE
 } from './actionTypes';
 import api from '../api_level/api';
 
@@ -63,4 +64,10 @@ export const addToFavorite = favorite => ({
 export const removeFromFavorite = favorite => ({
   type: REMOVE_FROM_FAVORITE,
   favorite
+});
+
+export const changePage = (currentPage, thisPageBeers) => ({
+  type: CHANGE_PAGE,
+  currentPage,
+  thisPageBeers
 });

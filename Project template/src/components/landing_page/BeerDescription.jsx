@@ -19,7 +19,9 @@ const BeerDescription = (props) => {
     <div className='beer-description'>
     <p className='beer-title'>{props.title}</p>
     <p className='beer-tagline'>{props.tagline}</p>
-    <button className='beer-buttons' onClick={getExactBeer}><NavLink to={`/details/${props.item.id}`}>Open</NavLink></button>
+    <button className='beer-buttons' onClick={getExactBeer}>
+      <NavLink to={`/details/${props.item.id}`}>Open</NavLink>
+    </button>
     {!props.isFavorite && 
       <button 
         className='beer-buttons' 

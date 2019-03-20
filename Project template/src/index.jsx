@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 import thunkMiddleware from 'redux-thunk';
 import { createLogger } from 'redux-logger';
 import { createStore, applyMiddleware } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
 import { requestData, getExactBeer } from './actions';
 import rootReducer from './reducers';
 import { Provider } from 'react-redux';
@@ -19,18 +20,16 @@ const persistedState = localStorage.getItem(STATE) ?
 const store = createStore(
   rootReducer,
   persistedState,
-  applyMiddleware(
-    thunkMiddleware,
-    loggerMiddleware
+  composeWithDevTools(
+    applyMiddleware(
+      thunkMiddleware,
+      loggerMiddleware
+    )
   )
 );
 
 store.dispatch(requestData());
 store.dispatch(getExactBeer(1));
-
-if(window.location.hash.split('/')[1] == 'details') {
-  store.dispatch(getExactBeer(window.location.hash.split('/')[2]))
-}
 
 store.subscribe(() => {
   localStorage.setItem(STATE, JSON.stringify(store.getState()))

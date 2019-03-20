@@ -14,11 +14,15 @@
     margin-left: 1.5vw;
 }
 
-.favbeer-p{
+.favbeer-tagline{
     margin-bottom: 1%;
 }
 
-.beer-buttons-fav{
+.favbeer-description{
+    margin-bottom: 1%;
+}
+
+.favbeer-button{
     text-transform: uppercase;
     cursor: pointer;
 }

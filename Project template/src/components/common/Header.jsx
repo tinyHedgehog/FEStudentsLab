@@ -2,9 +2,12 @@ import React from 'react';
 import MenuButton from './MenuButton';
 import './Header.css';
 
-const Header = () => (
+const Header = (props) => (
   <header className="Header">
-    <MenuButton />
+    <MenuButton
+      favorite={props.favorite}
+      changePage={props.changePage}
+    />
     <h1>Beer catalog</h1>
   </header>
 );
