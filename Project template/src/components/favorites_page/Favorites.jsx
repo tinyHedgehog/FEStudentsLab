@@ -9,7 +9,6 @@ class FavoritesPage extends React.PureComponent {
 
     this.state = {
       currentPage: CURRENT_FAVORITE_PAGE,
-      renderBeers: []
     }
 
     this.props.changePage(
@@ -19,7 +18,6 @@ class FavoritesPage extends React.PureComponent {
   }
 
   render() {
-    console.log(this.props);
     return(
       <div className='search-result'>
         {this.props.pageInfo && 
