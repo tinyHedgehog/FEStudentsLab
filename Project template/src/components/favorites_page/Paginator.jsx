@@ -15,6 +15,9 @@ class Paginator extends React.PureComponent {
   }
 
   changePage = (e) => {
+    this.setState({
+      currentPage: Number(e.target.id)
+    })
     this.props.changePage(
       Number(e.target.id),
       this.props.favorite
@@ -23,21 +26,23 @@ class Paginator extends React.PureComponent {
     
   handleLeftArrowClick = () => {
     if(this.state.currentPage !== 1) {
-      this.setState({
-        currentPage: this.state.currentPage - 1
-      })
+      this.props.changePage(
+        --this.state.currentPage,
+        this.props.favorite
+      )
     }
   }
     
   handleRightArrowClick = () => {
     if(this.state.currentPage !== this.state.maxPagesNumber){
-      this.setState({
-        currentPage: this.state.currentPage + 1
-      })
+      this.props.changePage(
+        ++this.state.currentPage,
+        this.props.favorite
+      )
     }
   }
 
-  render() {   
+  render() {
     const pageNumbers = [];
 
     for(let i = 1; i <= this.state.maxPagesNumber; i++) {
