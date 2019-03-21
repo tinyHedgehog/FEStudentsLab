@@ -16,7 +16,7 @@ const FavoriteBeer = (props) => {
   },[props.item.id, props.favorite]);
 
   const updatePage = useCallback(() => {
-    props.changePage(
+    props.favoritePage(
       props.currentPage,
       props.favorite.filter(item => item.id !== props.item.id)
     )
@@ -29,12 +29,12 @@ const FavoriteBeer = (props) => {
     if(noBeersOnPage && twoPagesRemaining) {
       const listToDelete = document.getElementById(props.currentPage).parentNode;
 
-      props.changePage(props.currentPage - 1, props.favorite);
+      props.favoritePage(props.currentPage - 1, props.favorite);
       while(listToDelete.firstChild) {
         listToDelete.removeChild(listToDelete.firstChild);
       }
     } else if(noBeersOnPage) {
-      props.changePage(props.currentPage - 1, props.favorite);
+      props.favoritePage(props.currentPage - 1, props.favorite);
       document.getElementById(props.currentPage).remove();
     }
   },[props.currentPage, props.favorite]);

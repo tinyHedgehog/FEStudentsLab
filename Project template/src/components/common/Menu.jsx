@@ -6,8 +6,8 @@ import {
 } from 'react-router-dom';
 
 const Menu = (props) => {
-  const changePage = useCallback(() => {
-    props.changePage(
+  const favoritePage = useCallback(() => {
+    props.favoritePage(
       CURRENT_FAVORITE_PAGE,
       props.favorite
     )
@@ -25,7 +25,7 @@ const Menu = (props) => {
               Home
             </NavLink>
           </li>
-          <li className='menu-li' onClick={changePage}>
+          <li className='menu-li' onClick={favoritePage}>
             <img />
             <NavLink to='/favorites_page'>
               Favorites

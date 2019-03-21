@@ -66,7 +66,7 @@ export const removeFromFavorite = favorite => ({
   favorite
 });
 
-export const changePage = (currentPage, thisPageBeers) => ({
+export const favoritePage = (currentPage, thisPageBeers) => ({
   type: CHANGE_PAGE,
   currentPage,
   thisPageBeers

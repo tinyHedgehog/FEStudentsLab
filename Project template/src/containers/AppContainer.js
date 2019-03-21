@@ -3,7 +3,7 @@ import App from '../components/App';
 import {
   addNextItems,
   getExactBeer,
-  changePage
+  favoritePage
 } from '../actions/index';
 
 const mapStateToProps = (state) => {
@@ -15,7 +15,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = {
   addNextItems,
   getExactBeer,
-  changePage
+  favoritePage
 };
 
 export default connect(

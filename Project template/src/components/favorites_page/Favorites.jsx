@@ -11,7 +11,7 @@ class FavoritesPage extends React.PureComponent {
       currentPage: CURRENT_FAVORITE_PAGE,
     }
 
-    this.props.changePage(
+    this.props.favoritePage(
       this.state.currentPage,
       this.props.favorite
     );
@@ -28,13 +28,13 @@ class FavoritesPage extends React.PureComponent {
               removeFromFavorite={this.props.removeFromFavorite}
               currentPage={this.props.pageInfo.currentPage}
               getExactBeer={this.props.getExactBeer}
-              changePage={this.props.changePage}
+              favoritePage={this.props.favoritePage}
             />
           ))
         }
       <Paginator
         favorite={this.props.favorite}
-        changePage={this.props.changePage}
+        favoritePage={this.props.favoritePage}
         currentPage={this.state.currentPage}
       />
     </div>

@@ -59,7 +59,7 @@ class App extends React.PureComponent {
         <div className='app'>
           <Header 
             favorite={this.props.favorite}
-            changePage={this.props.changePage}
+            favoritePage={this.props.favoritePage}
           />
           <Switch>
             <Route exact path='/' component={SearchResultContainer}  /> 

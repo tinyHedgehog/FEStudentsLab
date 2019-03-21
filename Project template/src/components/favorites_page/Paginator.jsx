@@ -14,11 +14,11 @@ class Paginator extends React.PureComponent {
     }
   }
 
-  changePage = (e) => {
+  favoritePage = (e) => {
     this.setState({
       currentPage: Number(e.target.id)
     })
-    this.props.changePage(
+    this.props.favoritePage(
       Number(e.target.id),
       this.props.favorite
     )
@@ -26,7 +26,7 @@ class Paginator extends React.PureComponent {
     
   handleLeftArrowClick = () => {
     if(this.state.currentPage !== 1) {
-      this.props.changePage(
+      this.props.favoritePage(
         --this.state.currentPage,
         this.props.favorite
       )
@@ -35,7 +35,7 @@ class Paginator extends React.PureComponent {
     
   handleRightArrowClick = () => {
     if(this.state.currentPage !== this.state.maxPagesNumber){
-      this.props.changePage(
+      this.props.favoritePage(
         ++this.state.currentPage,
         this.props.favorite
       )
@@ -55,7 +55,7 @@ class Paginator extends React.PureComponent {
             className='page-number'
             key={number}
             id={number}
-            onClick={this.changePage}
+            onClick={this.favoritePage}
           >
             {number}
           </li>

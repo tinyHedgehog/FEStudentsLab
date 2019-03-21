@@ -3,20 +3,20 @@ import Favorites from '../components/favorites_page/Favorites';
 import {
   removeFromFavorite,
   getExactBeer,
-  changePage
+  favoritePage
 } from '../actions/index';
 
 const mapStateToProps = state => {
   return {
     favorite: state.favorite,
-    pageInfo: state.changePage
+    pageInfo: state.favoritePage
   };
 };
 
 const mapDispatchToProps = {
   removeFromFavorite,
   getExactBeer,
-  changePage
+  favoritePage
 };
 
 export default connect(
