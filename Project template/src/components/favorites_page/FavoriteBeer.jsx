@@ -2,6 +2,7 @@ import React, { useCallback } from 'react';
 import { NavLink } from 'react-router-dom';
 import defaultImg from '../common/default_image.png';
 import './FavoriteBeer.css';
+import { CURRENT_FAVORITE_PAGE } from '../../constants';
 
 const FavoriteBeer = (props) => {
   const getExactBeer = useCallback(() => {
@@ -22,8 +23,20 @@ const FavoriteBeer = (props) => {
   },[props.currentPage, props.favorite]);
 
   const remainingBeersController = useCallback((e) => {
-    e.target.parentNode.parentNode.children.length == 2 ?
-    props.changePage(props.currentPage - 1, props.favorite) : '';
+    const noBeersOnPage = e.target.parentNode.parentNode.children.length == 2;
+    const twoPagesRemaining = props.currentPage === CURRENT_FAVORITE_PAGE + 1;
+
+    if(noBeersOnPage && twoPagesRemaining) {
+      const listToDelete = document.getElementById(props.currentPage).parentNode;
+
+      props.changePage(props.currentPage - 1, props.favorite);
+      while(listToDelete.firstChild) {
+        listToDelete.removeChild(listToDelete.firstChild);
+      }
+    } else if(noBeersOnPage) {
+      props.changePage(props.currentPage - 1, props.favorite);
+      document.getElementById(props.currentPage).remove();
+    }
   },[props.currentPage, props.favorite]);
 
   return(
