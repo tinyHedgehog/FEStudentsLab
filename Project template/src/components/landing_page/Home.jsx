@@ -9,7 +9,11 @@ class Home extends React.PureComponent {
 
     return (
       <div>
-        <SearchBar />
+        <SearchBar 
+          searchBeers={this.props.searchBeers}
+          requestData={this.props.requestData}
+          applyFilters={this.props.applyFilters}
+        />
         <div className='search-result'>
           {isCatalogDisplayed && this.props.catalog.map((item) => (
             <BeerCard
@@ -18,6 +22,7 @@ class Home extends React.PureComponent {
               isFavorite={this.props.favorite.some((favItem) => favItem.id == item.id )}
               addToFavorite={this.props.addToFavorite}
               removeFromFavorite={this.props.removeFromFavorite}
+              getExactBeer={this.props.getExactBeer}
             />
           ))}
         </div>

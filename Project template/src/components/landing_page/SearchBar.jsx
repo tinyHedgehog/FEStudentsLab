@@ -1,6 +1,10 @@
 import React from 'react';
 import AdvancedFilters from './AdvancedFilters';
-import searchIcon from './search-icon.png';
+import searchIcon from './search_icon.png';
+import {
+  ENTER,
+  LEFT_MOUSE_BUTTON
+} from '../../constants'
 import './SearchBar.css';
 
 class SearchBar extends React.PureComponent {
@@ -8,7 +12,8 @@ class SearchBar extends React.PureComponent {
     super(props);
 
     this.state = {
-      areFiltersHidden: true
+      areFiltersHidden: true,
+      searchRequest: ''
     }
   }
 
@@ -18,15 +23,40 @@ class SearchBar extends React.PureComponent {
     })
   }
 
+  createSearchRequest = (e) => {
+    this.setState({
+      searchRequest: e.target.value
+    })
+  }
+
+  searchBeers = (e) => {
+    if(e.keyCode == ENTER || e.button == LEFT_MOUSE_BUTTON) {
+      this.state.searchRequest == false ?
+      this.props.requestData() :
+      this.props.searchBeers(this.state.searchRequest)
+    }
+  }
+
   render() {
     return (
       <div className='search-container'>
         <div className='search-align'>
-          <input type='text' placeholder='Search beers...' className='search-input'/>
-          <input className='search-icon' type='image' src={searchIcon} />
-          <input type='button' value='Advanced Filters' onClick={this.showFilters} />
+          <input type='text' placeholder='Search beers...' 
+            className='search-input'
+            onChange={this.createSearchRequest}
+            onKeyDown={this.searchBeers}
+          />
+          <input type='image'
+            className='search-icon'  
+            src={searchIcon} 
+            onClick={this.searchBeers} />
+          <input type='button' 
+            value='Advanced Filters' 
+            onClick={this.showFilters} />
         </div> 
-        {!this.state.areFiltersHidden && <AdvancedFilters />}
+        {!this.state.areFiltersHidden && 
+          <AdvancedFilters applyFilters={this.props.applyFilters} />
+        }
       </div>
     );
   }

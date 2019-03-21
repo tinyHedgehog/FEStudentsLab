@@ -1,0 +1,29 @@
+.page-numbers-list{
+    position: absolute;
+    bottom: 5%;
+}
+
+.page-number{
+    display: inline;
+    padding-top: 5px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+.arrow-left{
+    position: relative;
+    top: 9px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.arrow-right{
+    position: relative;
+    top: 9px;
+    width: 30px;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    cursor: pointer;
+}

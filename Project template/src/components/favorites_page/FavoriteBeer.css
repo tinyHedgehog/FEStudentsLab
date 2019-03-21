@@ -1,7 +1,7 @@
 .favorite-beer{
     border: 1px solid rgb(0,0,0);
     width: 60vw;
-    height: 15vh;
+    height: 16vh;
     margin-top: 0.5vh;
     margin-bottom: 0.5vh;
 }
@@ -9,16 +9,20 @@
 .favbeer-image{
     height: 100%;
     border: 1px solid rgb(0,0,0);
-    border-radius: 50%;
     float: right;
     margin-right: 1.5vw;
     margin-left: 1.5vw;
 }
 
-.favbeer-p{
+.favbeer-tagline{
     margin-bottom: 1%;
 }
 
-.beer-buttons-fav{
+.favbeer-description{
+    margin-bottom: 1%;
+}
+
+.favbeer-button{
     text-transform: uppercase;
+    cursor: pointer;
 }

@@ -3,10 +3,12 @@ import { render } from 'react-dom';
 import thunkMiddleware from 'redux-thunk';
 import { createLogger } from 'redux-logger';
 import { createStore, applyMiddleware } from 'redux';
-import { requestData } from './actions';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import { requestData, getExactBeer } from './actions';
 import rootReducer from './reducers';
 import { Provider } from 'react-redux';
-import App from './components/App';
+
+import AppContainer from './containers/AppContainer';
 import './index.css';
 
 const STATE = 'state';
@@ -18,13 +20,16 @@ const persistedState = localStorage.getItem(STATE) ?
 const store = createStore(
   rootReducer,
   persistedState,
-  applyMiddleware(
-    thunkMiddleware,
-    loggerMiddleware
+  composeWithDevTools(
+    applyMiddleware(
+      thunkMiddleware,
+      loggerMiddleware
+    )
   )
 );
 
 store.dispatch(requestData());
+store.dispatch(getExactBeer(1));
 
 store.subscribe(() => {
   localStorage.setItem(STATE, JSON.stringify(store.getState()))
@@ -32,7 +37,7 @@ store.subscribe(() => {
 
 render(
   <Provider store={store}>
-    <App />
+    <AppContainer />
   </Provider>,
   document.getElementById('root'),
 );

@@ -8,19 +8,68 @@ import {
 import SearchResultContainer from '../containers/SearchResultContainer';
 import FavoritesContainer from '../containers/FavoritesContainer';
 import BeerDetailsContainer from '../containers/BeerDetailsContainer';
+import {
+  CURRENT_REQUEST_PAGE,
+  HOME_LOCATION,
+  DETAILS_LOCATION
+} from '../constants';
 import './App.css';
 
-const App = () => (
-  <HashRouter>
-    <div className='app'>
-      <Header />
-      <Switch>
-        <Route exact path='/' component={SearchResultContainer}  /> 
-        <Route path='/favorites_page' component={FavoritesContainer} />
-        <Route path='/details/:id' component={BeerDetailsContainer} />
-      </Switch>
-    </div>
-  </HashRouter>
-);
+class App extends React.PureComponent {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      currentRequestPage: CURRENT_REQUEST_PAGE,
+    }
+
+    if(this.particularBeerSelected()){
+      this.switchToBeerDetails();
+    }
+
+    window.onscroll = () => {
+      const nextItemsRequested = Math.round(window.innerHeight + document.documentElement.scrollTop)
+      === document.documentElement.offsetHeight &&
+      window.location.hash === HOME_LOCATION;
+      
+      if (nextItemsRequested) {
+        this.props.addNextItems(this.state.currentRequestPage);
+        this.updateRequestParams();
+      }
+    }
+  }
+
+  particularBeerSelected = () => {
+    return window.location.hash.split('/')[1] == DETAILS_LOCATION;
+  }
+
+  switchToBeerDetails = () => {
+    this.props.getExactBeer(window.location.hash.split('/')[2])
+  }
+
+  updateRequestParams = () => {
+    this.setState({
+      currentRequestPage: ++this.state.currentRequestPage,
+    })
+  }
+  
+  render() {
+    return(
+      <HashRouter>
+        <div className='app'>
+          <Header 
+            favorite={this.props.favorite}
+            favoritePage={this.props.favoritePage}
+          />
+          <Switch>
+            <Route exact path='/' component={SearchResultContainer}  /> 
+            <Route path='/favorites_page' component={FavoritesContainer} />
+            <Route path='/details/:id' component={BeerDetailsContainer} />
+          </Switch>
+        </div>
+      </HashRouter>
+    )
+  }
+}
 
 export default App;

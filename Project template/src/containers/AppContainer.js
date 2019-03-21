@@ -1,20 +1,19 @@
 import { connect } from 'react-redux';
-import Favorites from '../components/favorites_page/Favorites';
+import App from '../components/App';
 import {
-  removeFromFavorite,
+  addNextItems,
   getExactBeer,
   favoritePage
 } from '../actions/index';
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    favorite: state.favorite,
-    pageInfo: state.favoritePage
+    favorite: state.favorite
   };
 };
 
 const mapDispatchToProps = {
-  removeFromFavorite,
+  addNextItems,
   getExactBeer,
   favoritePage
 };
@@ -22,4 +21,4 @@ const mapDispatchToProps = {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Favorites);
+)(App);

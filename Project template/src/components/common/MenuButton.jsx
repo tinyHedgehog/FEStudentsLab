@@ -24,7 +24,11 @@ class MenuButton extends React.PureComponent {
         <div className="Bars" />
         <div className="Bars" />
         <div className="Bars" />
-        {!this.state.isMenuHidden && <Menu />}
+        {!this.state.isMenuHidden && 
+        <Menu
+          favorite={this.props.favorite}
+          favoritePage={this.props.favoritePage}
+        />}
       </div>
     );
   }

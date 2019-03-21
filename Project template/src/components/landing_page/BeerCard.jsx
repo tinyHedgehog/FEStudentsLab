@@ -1,5 +1,6 @@
 import React from 'react';
 import BeerDescription from './BeerDescription';
+import defaultImg from '../common/default_image.png';
 import './BeerCard.css';
 
 class BeerCard extends React.PureComponent {
@@ -8,14 +9,17 @@ class BeerCard extends React.PureComponent {
 
     return (
       <div className="beer-card"  id={item.id}>
-        <img className='beer-image' src={item.image_url}/>
+        {item.image_url == undefined ?
+        <img className='beer-image' src={defaultImg}/> :
+        <img className='beer-image' src={item.image_url}/>}
         <BeerDescription 
-          itemInfo={item}
+          item={item}
           title={item.name} 
           tagline={item.tagline}
           isFavorite={this.props.isFavorite}
           addToFavorite={this.props.addToFavorite}
-          removeFromFavorite={this.props.removeFromFavorite} 
+          removeFromFavorite={this.props.removeFromFavorite}
+          getExactBeer={this.props.getExactBeer}
         />
       </div>
     );
