@@ -32,14 +32,14 @@ class FavoritesPage extends React.PureComponent {
             />
           ))
         }
-      <Paginator
-        favorite={this.props.favorite}
-        favoritePage={this.props.favoritePage}
-        currentPage={this.state.currentPage}
-      />
-    </div>
+        <Paginator
+          favorite={this.props.favorite}
+          favoritePage={this.props.favoritePage}
+          currentPage={this.state.currentPage}
+        />
+      </div>
     );
   }
-}
+};
 
 export default FavoritesPage;

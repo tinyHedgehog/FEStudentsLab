@@ -1,11 +1,11 @@
 .details-page{
-    padding-right: 10%;
-    padding-left: 20%;
+    padding: 1vh 10% 0 20%;
+
 }
 
 .props-and-food{
     display: flex;
-    margin-bottom: 2%;
+    margin-bottom: 1%;
 }
 
 ul{
@@ -15,9 +15,26 @@ ul{
 
 li{
     border: 1px solid rgb(133, 133, 133);
-    padding: 1%;
+    border-bottom: none;
+    padding: 3%;
 }
 
-.nested-li{
+.ingredients-description-list:last-child{
+    border-bottom: 1px solid rgb(133, 133, 133);
+}
+
+.ingredients-description{
     border: none;
+    color: rgb(128, 128, 128);
+    padding-left: 0;
+}
+
+.method-description-list:last-child{
+    border-bottom: 1px solid rgb(133, 133, 133);
+}
+
+.method-description{
+    border: none;
+    color: rgb(128, 128, 128);
+    padding-left: 0;
 }

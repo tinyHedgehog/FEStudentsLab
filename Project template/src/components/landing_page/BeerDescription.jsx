@@ -19,12 +19,14 @@ const BeerDescription = (props) => {
     <div className='beer-description'>
     <p className='beer-title'>{props.title}</p>
     <p className='beer-tagline'>{props.tagline}</p>
-    <button className='beer-buttons' onClick={getExactBeer}>
-      <NavLink to={`/details/${props.item.id}`}>Open</NavLink>
-    </button>
+    <NavLink to={`/details/${props.item.id}`} 
+      className='beer-buttons-open'
+      onClick={getExactBeer}>
+        Open
+    </NavLink>
     {!props.isFavorite && 
       <button 
-        className='beer-buttons' 
+        className='beer-buttons-favor' 
         onClick={addToFavorite}
       >
       Favorite
@@ -32,7 +34,7 @@ const BeerDescription = (props) => {
     }
     {props.isFavorite && 
       <button 
-        className='beer-buttons'
+        className='beer-buttons-favor'
         onClick={removeFromFavorite}
       >
       Remove Favorite

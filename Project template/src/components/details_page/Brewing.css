@@ -1,16 +1,21 @@
+.brewing{
+    padding-bottom: 1vh;
+}
+
 .brewing-description{
     display: flex;
 }
 
 ul.ingredients{
+    width: 24%;
     margin-right: 3.5%;
 }
 
 ul.method {
-    width: 30%;
+    width: 22%;
 }
 
-.brewers-tips{
+.brewing-tips{
     width: 40%;
     margin-bottom: 1%;
 }

@@ -5,3 +5,4 @@ export const ENTER = 13;
 export const LEFT_MOUSE_BUTTON = 0;
 export const CURRENT_FAVORITE_PAGE = 1;
 export const BEERS_PER_PAGE = 5;
+export const INITIAL_PAGE_SCROLL = 0;

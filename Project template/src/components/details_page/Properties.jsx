@@ -7,9 +7,21 @@ const Properties = (props) => {
   return(
     <ul className='properties'>
       <h2>Properties</h2>
-      <li>ABV <img className='info-icon' src={icon} title={AcronymInfo.ABV} /> {props.abv}</li>
-      <li>IBU <img className='info-icon' src={icon} title={AcronymInfo.IBU} /> {props.ibu}</li>
-      <li>EBC <img className='info-icon' src={icon} title={AcronymInfo.EBC} /> {props.ebc}</li>
+      <li className='properties-description'>
+        ABV
+        <img className='properties-info-icon' src={icon} title={AcronymInfo.ABV} />
+        <span className='prop-value'>{props.abv}</span>
+      </li>
+      <li className='properties-description'>
+        IBU
+        <img className='properties-info-icon' src={icon} title={AcronymInfo.IBU} />
+        <span className='prop-value'>{props.ibu}</span>
+      </li>
+      <li className='properties-description'>
+        EBC
+        <img className='properties-info-icon' src={icon} title={AcronymInfo.EBC} />
+        <span className='prop-value'>{props.ebc}</span>
+      </li>
     </ul>
   )
 }

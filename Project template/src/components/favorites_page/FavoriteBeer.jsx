@@ -1,8 +1,8 @@
 import React, { useCallback } from 'react';
 import { NavLink } from 'react-router-dom';
 import defaultImg from '../common/default_image.png';
-import './FavoriteBeer.css';
 import { CURRENT_FAVORITE_PAGE } from '../../constants';
+import './FavoriteBeer.css';
 
 const FavoriteBeer = (props) => {
   const getExactBeer = useCallback(() => {
@@ -48,9 +48,11 @@ const FavoriteBeer = (props) => {
       <h3>{props.item.name}</h3>
       <p className='favbeer-tagline'>{props.item.tagline}</p>
       <p className='favbeer-description'>{props.item.description}</p>
-      <button className='favbeer-button' onClick={getExactBeer}>
-        <NavLink to={`/details/${props.item.id}`}>Open</NavLink>
-      </button>
+      <NavLink to={`/details/${props.item.id}`} 
+        className='favbeer-button-open'
+        onClick={getExactBeer}>
+          Open
+      </NavLink>
       <button className='favbeer-button' onClick={removeFromFavorite}>
         Remove Favorite
       </button>
