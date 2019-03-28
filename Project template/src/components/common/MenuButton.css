@@ -1,14 +1,34 @@
 .Container {
     display: inline-block;
     cursor: pointer;
-    margin-right: 10px;
-    margin-left: 10px;
-  }
+    margin-right: 1vw;
+    margin-left: 1vw;
+}
   
-  .Bars {
-    width: 29px;
-    height: 3px;
+.Bars {
+    width: 1.7vw;
+    height: 0.33vh;
     background-color: rgb(218, 218, 218);
-    margin: 6px 0;
+    margin: 0.7vh 0;
     transition: 0.4s;
-  }
+}
+
+@media screen and (max-width: 1024px) {
+    .Bars {
+        margin-right: 2.5vw;
+        margin-left: 2.5vw;
+        width: 4vw;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .Bars {
+        width: 6vw;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .Bars {
+        width: 6vw;
+    }
+}

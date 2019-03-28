@@ -1,4 +1,4 @@
-.menu{
+.menu {
     position: absolute;
     top: 0;
     left: -100vh;
@@ -14,97 +14,117 @@
     transition: 0.8s ease-in-out;
 }
 
-.menu.active{
+.menu.active {
     transform: translateX(100vh)
 }
 
-.menu-header{
+.menu-header {
     position: relative;
     width: 100%;
     height: 17%;
     color: rgb(255, 255, 255);
     background-image: linear-gradient(to bottom right, rgba(15, 41, 90), 75%, rgba(98, 153, 255, 1));
-    font-size: 25px;
+    font-size: 3vh;
 }
 
-.menu-header-text{
+.menu-header-text {
     position: relative;
     top: 2vh;
     left: 2vh;
 }
 
-.menu-navigation{
+.menu-navigation {
     height: 83%;
 }
 
-.menu-home{
+.menu-home {
     border: none;
-    font-size: 20px;
+    font-size: 2.3vh;
     text-decoration: none;
     border-top: 2px solid rgb(18, 15, 160);
     border-bottom: 2px solid rgb(18, 15, 160);
     transition: 0.4s ease-in-out;
 }
 
-.menu-home:hover{
-    padding-left: 20px;
+.menu-home:hover {
+    padding-left: 1vw;
     color: rgb(255, 255, 255);
     background-color: rgb(18, 15, 160);
 }
 
-.menu-home:hover > .menu-home-image{
+.menu-home:hover > .menu-home-image {
     filter: invert(100%);
 }
 
-.menu-home-link{
+.menu-home-link {
     color: rgb(0,0,0);
     text-decoration: none;
 }
 
-.menu-home-image{
+.menu-home-image {
     position: relative;
     left: 5px;
-    height: 20px;
+    height: 2.2vh;
     transition: 0.4s ease-in-out;
 }
 
-.menu-home-text{
+.menu-home-text {
     position: relative;
-    left: 19px;
+    left: 1.1vw;
 }
 
-.menu-favorite{
+.menu-favorite {
     border: none;
     border-bottom: none;
-    font-size: 20px;
+    font-size: 2.3vh;
     text-decoration: none;
     transition: 0.4s ease-in-out;
     border-bottom: 2px solid rgb(18, 15, 160);
 }
 
-.menu-favorite:hover{
+.menu-favorite:hover {
     color: rgb(255, 255, 255);
-    padding-left: 20px;
+    padding-left: 1vw;
     background-color: rgb(18, 15, 160);
 }
 
-.menu-favorite:hover > .menu-favorite-image{
+.menu-favorite:hover > .menu-favorite-image {
     filter: invert(100%);
 }
 
-.menu-favorite-link{
+.menu-favorite-link {
     color: rgb(0,0,0);
     text-decoration: none;
 }
 
-.menu-favorite-image{
+.menu-favorite-image {
     position: relative;
     left: 5px;
-    height: 18px;
+    height: 2.1vh;
     transition: 0.4s ease-in-out;
 }
 
-.menu-favorite-text{
+.menu-favorite-text {
     position: relative;
-    left: 20px;
+    left: 1.1vw;
+}
+
+@media screen and (max-width: 1024px) {
+    .menu {
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .menu {
+        width: 80%;
+    }
+
+    .menu-home-text{
+        left: 4vw;
+    }
+
+    .menu-favorite-text{
+        left: 4vw;
+    }
 }

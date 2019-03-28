@@ -1,7 +1,14 @@
-.food-pairing{
+.food-pairing {
     width: 22%;
 }
 
-.food-pairing-description:last-child{
+.food-pairing-description:last-child {
     border-bottom: 1px solid rgb(133, 133, 133);
+}
+
+@media screen and (max-width: 1050px) {
+    .food-pairing {
+        width: 100%;
+        margin-bottom: 3vh;
+    }
 }

@@ -45,7 +45,7 @@ const FavoriteBeer = (props) => {
       <img className='favbeer-image' src={defaultImg} /> :
       <img className='favbeer-image' src={props.item.image_url} />
       }
-      <h3>{props.item.name}</h3>
+      <h3 className='favbeer-name'>{props.item.name}</h3>
       <p className='favbeer-tagline'>{props.item.tagline}</p>
       <p className='favbeer-description'>{props.item.description}</p>
       <NavLink to={`/details/${props.item.id}`} 

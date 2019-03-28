@@ -63,6 +63,7 @@ class App extends React.PureComponent {
             searchBeers={this.props.searchBeers}
             requestData={this.props.requestData}
             applyFilters={this.props.applyFilters}
+            exactBeer={this.props.exactBeer}
           />
           <Switch>
             <Route exact path='/' component={HomeContainer}  /> 

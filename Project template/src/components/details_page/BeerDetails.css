@@ -1,40 +1,57 @@
-.details-page{
+.details-page {
     padding: 1vh 10% 0 20%;
-
 }
 
-.props-and-food{
+.props-and-food {
     display: flex;
     margin-bottom: 1%;
 }
 
-ul{
+ul {
     list-style-type: none;
     padding: 0;
 }
 
-li{
+li {
     border: 1px solid rgb(133, 133, 133);
     border-bottom: none;
     padding: 3%;
 }
 
-.ingredients-description-list:last-child{
+.ingredients-description-list:last-child {
     border-bottom: 1px solid rgb(133, 133, 133);
 }
 
-.ingredients-description{
+.ingredients-description {
     border: none;
     color: rgb(128, 128, 128);
     padding-left: 0;
 }
 
-.method-description-list:last-child{
+.method-description-list:last-child {
     border-bottom: 1px solid rgb(133, 133, 133);
 }
 
-.method-description{
+.method-description {
     border: none;
     color: rgb(128, 128, 128);
     padding-left: 0;
+}
+
+@media screen and (max-width: 1050px) {
+    .details-page {
+        margin-top: 7vh;
+        margin-bottom: 1vh;
+        padding: 0 25% 0 25%;
+    }
+
+    .props-and-food {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .details-page {
+        padding: 0 5% 0 5%;
+    }
 }

@@ -1,4 +1,4 @@
-.search-result{
+.search-result {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -6,7 +6,7 @@
     padding-left: 10%;
 }
 
-.up-panel{
+.up-panel {
     position: fixed;
     top: 6.25%;
     left: 0;
@@ -18,20 +18,27 @@
     opacity: 0.5;
 }
 
-.up-panel:hover{
+.up-panel:hover {
     cursor: pointer;
     opacity: 1;
 }
 
-.up-panel-text{
+.up-panel-text {
     position: absolute;
     top: 1.5vh;
     left: 2.5vw;
+    font-size: 1.85vh
 }
 
-.up-icon{
+.up-icon {
     position: absolute;
     top: 0.75vh;
     left: 0.5vw;
-    height: 30px;
+    height: 3.4vh;
+}
+
+@media screen and (max-width: 1050px) {
+    .up-panel-text {
+        font-size: 0;
+    }
 }

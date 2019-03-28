@@ -1,21 +1,46 @@
-.brewing{
+.brewing {
     padding-bottom: 1vh;
 }
 
-.brewing-description{
+.brewing-description {
     display: flex;
 }
 
-ul.ingredients{
+.ingredients {
     width: 24%;
     margin-right: 3.5%;
 }
 
-ul.method {
+.method {
     width: 22%;
 }
 
-.brewing-tips{
+.brewing-tips {
     width: 40%;
     margin-bottom: 1%;
+}
+
+@media screen and (max-width: 1050px) {
+    .brewing-description {
+        flex-direction: column;
+    }
+
+    .brewing-tips {
+        width: 100%;
+    }
+
+    .ingredients {
+        width: 100%;
+        margin-bottom: 3vh;
+    }
+
+    .method {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .ingredients {
+        margin-right: 0;
+    }
 }

@@ -1,22 +1,22 @@
-.page-numbers-list{
-    position: absolute;
+.page-numbers-list {
+    position: fixed;
     bottom: 5%;
-    left: 6.5%;
+    left: 6.5vw;
 }
 
-.page-number{
+.page-number {
     display: inline;
-    padding: 5px 10px 5px 10px;
+    padding: 0.57vh 1.14vh 0.57vh 1.14vh;
     cursor: pointer;
+    font-size: 1.71vh;
     border: 1px solid #cccccc;
-
     -webkit-transition: border linear .2s, box-shadow linear .2s;
     -moz-transition: border linear .2s, box-shadow linear .2s;
     -o-transition: border linear .2s, box-shadow linear .2s;
     transition: border linear .2s, box-shadow linear .2s;
 }
 
-.page-number:hover{
+.page-number:hover {
     border-color: rgba(82, 168, 236, 0.8);
     outline: 0;
     outline: thin dotted \9;
@@ -25,10 +25,10 @@
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6);
 }
 
-.arrow-left{
+.arrow-left {
     position: relative;
-    top: 9px;
-    width: 30px;
+    top: 1vh;
+    height: 3.4vh;
     cursor: pointer;
     -webkit-transition: border linear .2s, box-shadow linear .2s;
     -moz-transition: border linear .2s, box-shadow linear .2s;
@@ -36,10 +36,10 @@
     transition: border linear .2s, box-shadow linear .2s;
 }
 
-.arrow-right{
+.arrow-right {
     position: relative;
-    top: 9px;
-    width: 30px;
+    top: 1vh;
+    height: 3.4vh;
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
     cursor: pointer;
@@ -49,7 +49,7 @@
     transition: border linear .2s, box-shadow linear .2s;
 }
 
-.arrow-left:hover{
+.arrow-left:hover {
     border-color: rgba(82, 168, 236, 0.8);
     outline: 0;
     outline: thin dotted \9;
@@ -58,11 +58,41 @@
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6);
 }
 
-.arrow-right:hover{
+.arrow-right:hover {
     border-color: rgba(82, 168, 236, 0.8);
     outline: 0;
     outline: thin dotted \9;
     -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px     rgba(82,168,236,.6);
     -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6);
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6); 
+}
+
+ @media screen and (max-width: 1300px) {
+    .page-numbers-list {
+        left: 5vw;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .page-numbers-list {
+        position: absolute;
+        top: 147.5%;
+        left: 1vw;
+    }
+} 
+
+@media screen and (max-width: 420px) {
+    .page-numbers-list {
+        position: absolute;
+        top: 150.5%;
+        left: 1vw;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .page-numbers-list {
+        position: absolute;
+        top: 193%;
+        left: 1vw;
+    }
 }

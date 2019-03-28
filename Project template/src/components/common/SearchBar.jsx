@@ -54,10 +54,7 @@ class SearchBar extends React.PureComponent {
             onClick={this.searchBeers} />
           <a className='filters-button'
             type='button'
-            value='Advanced Filters'
-            onClick={this.showFilters}>
-              Advanced filters
-          </a>
+            onClick={this.showFilters} />
         </div> 
         <AdvancedFilters
           className={this.state.areFiltersHidden ? '' : ' active'}
