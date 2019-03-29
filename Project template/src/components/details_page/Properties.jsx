@@ -10,17 +10,17 @@ const Properties = (props) => {
       <li className='properties-description'>
         ABV
         <img className='properties-info-icon' src={icon} title={AcronymInfo.ABV} />
-        <span className='prop-value'>{props.abv}</span>
+        <span className='property-value'>{props.abv}</span>
       </li>
       <li className='properties-description'>
         IBU
         <img className='properties-info-icon' src={icon} title={AcronymInfo.IBU} />
-        <span className='prop-value'>{props.ibu}</span>
+        <span className='property-value'>{props.ibu}</span>
       </li>
       <li className='properties-description'>
         EBC
         <img className='properties-info-icon' src={icon} title={AcronymInfo.EBC} />
-        <span className='prop-value'>{props.ebc}</span>
+        <span className='property-value'>{props.ebc}</span>
       </li>
     </ul>
   )

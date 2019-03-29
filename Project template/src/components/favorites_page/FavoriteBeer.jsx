@@ -40,7 +40,7 @@ const FavoriteBeer = (props) => {
   },[props.currentPage, props.favorite]);
 
   return(
-    <div className='favorite-beer'>
+    <div className='favbeer'>
       {props.item.image_url == undefined ?
       <img className='favbeer-image' src={defaultImg} /> :
       <img className='favbeer-image' src={props.item.image_url} />

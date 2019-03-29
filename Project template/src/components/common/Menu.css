@@ -27,6 +27,11 @@
     font-size: 3vh;
 }
 
+.menu-navigation-list {
+    list-style-type: none;
+    padding: 0;
+}
+
 .menu-header-text {
     position: relative;
     top: 2vh;
@@ -44,6 +49,7 @@
     border-top: 2px solid rgb(18, 15, 160);
     border-bottom: 2px solid rgb(18, 15, 160);
     transition: 0.4s ease-in-out;
+    padding: 3%;
 }
 
 .menu-home:hover {
@@ -80,6 +86,7 @@
     text-decoration: none;
     transition: 0.4s ease-in-out;
     border-bottom: 2px solid rgb(18, 15, 160);
+    padding: 3%;
 }
 
 .menu-favorite:hover {

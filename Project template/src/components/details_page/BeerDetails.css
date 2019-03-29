@@ -7,37 +7,6 @@
     margin-bottom: 1%;
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-li {
-    border: 1px solid rgb(133, 133, 133);
-    border-bottom: none;
-    padding: 3%;
-}
-
-.ingredients-description-list:last-child {
-    border-bottom: 1px solid rgb(133, 133, 133);
-}
-
-.ingredients-description {
-    border: none;
-    color: rgb(128, 128, 128);
-    padding-left: 0;
-}
-
-.method-description-list:last-child {
-    border-bottom: 1px solid rgb(133, 133, 133);
-}
-
-.method-description {
-    border: none;
-    color: rgb(128, 128, 128);
-    padding-left: 0;
-}
-
 @media screen and (max-width: 1050px) {
     .details-page {
         margin-top: 7vh;

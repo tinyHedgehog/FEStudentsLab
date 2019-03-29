@@ -4,7 +4,7 @@ const Method = (props) => {
   return(
     <ul className='method'><h2>Method</h2>
       <li className='method-description-list'>Mash
-        <ul>
+        <ul className='method-description-container'>
           {props.method.mash_temp.map((mash, index) => {
             if(mash.duration){
               return <li key={`mash_${index}`} className='method-description'>{mash.duration} minutes at {mash.temp.value} &#8451;</li>
@@ -14,13 +14,13 @@ const Method = (props) => {
         </ul>
       </li>
       <li className='method-description-list'>Fermentation
-        <ul>
+        <ul className='method-description-container'>
           <li className='method-description'>Perform at {props.method.fermentation.temp.value} &#8451;</li>
         </ul>
       </li>
       {props.method.twist && 
       <li className='method-description-list'>Twist
-        <ul>
+        <ul className='method-description-container'>
           <li className='method-description'>
             {props.method.twist}
           </li>

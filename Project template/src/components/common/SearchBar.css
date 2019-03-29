@@ -9,7 +9,7 @@
     height: 3.4vh;
 }
 
-.label {
+.search-label {
     position: absolute;
     top: 0.7vh;
     font-size: 1.85vh;
@@ -20,7 +20,7 @@
     z-index: -1;
 }
 
-.border {
+.search-border {
     position: absolute;
     top: 86%;
     height: 0.225vh;
@@ -54,17 +54,17 @@
     border-bottom: none;
 }
 
-.search-input:not(:placeholder-shown) + span {
+.search-input:not(:placeholder-shown) + .search-label {
     color: #C8CCD4;
     transform: translateY(-16px) scale(0.75);
 }
 
-.search-input:focus + span {
+.search-input:focus + .search-label {
     color: #C8CCD4;
     transform: translateY(-16px) scale(0.75);
 }
 
-.search-input:focus + span + .border {
+.search-input:focus + .search-label + .search-border {
     transform: scaleX(1);
 }
 
@@ -119,15 +119,15 @@
         width: 80%;
     }
 
-    .border {
+    .search-border {
         width: 80%;
     }
 
-    .search-input:not(:placeholder-shown) + span {
+    .search-input:not(:placeholder-shown) + .search-label {
         transform: translateY(-25px) scale(0.75);
     }
 
-    .search-input:focus + span {
+    .search-input:focus + .search-label {
         transform: translateY(-25px) scale(0.75);
     }
 
@@ -142,21 +142,21 @@
 }
 
 @media screen and (max-width: 768px) {
-    .search-input:not(:placeholder-shown) + span {
+    .search-input:not(:placeholder-shown) + .search-label {
         transform: translateY(-20px) scale(0.75);
     }
 
-    .search-input:focus + span {
+    .search-input:focus + .search-label {
         transform: translateY(-20px) scale(0.75);
     }
 }
 
 @media screen and (max-width: 420px) {
-    .search-input:not(:placeholder-shown) + span {
+    .search-input:not(:placeholder-shown) + .search-label {
         transform: translateY(-13px) scale(0.75);
     }
         
-    .search-input:focus + span {
+    .search-input:focus + .search-label {
         transform: translateY(-13px) scale(0.75);
     }
 }

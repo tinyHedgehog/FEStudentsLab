@@ -35,7 +35,7 @@ class AdvancedFilters extends React.PureComponent {
 
     return (
       <div className={'advanced-filters' + this.props.className}>
-        <img className='advanced-filters-icon first-ico' src={filterIcon} />
+        <img className='advanced-filters-icon first-icon' src={filterIcon} />
         <span>Alcohol by volume: {this.state.abvValue}</span>
         <input
           type='range'
@@ -47,7 +47,7 @@ class AdvancedFilters extends React.PureComponent {
           className='advanced-filters-slider'
           id='abvValue'
         />
-        <img className='advanced-filters-icon second-ico' src={filterIcon} />
+        <img className='advanced-filters-icon second-icon' src={filterIcon} />
         <span>International Bitterness Units: {this.state.ibuValue}</span>
         <input
           type='range'
@@ -59,7 +59,7 @@ class AdvancedFilters extends React.PureComponent {
           className='advanced-filters-slider'
           id='ibuValue'
         />
-        <img className='advanced-filters-icon third-ico' src={filterIcon} />
+        <img className='advanced-filters-icon third-icon' src={filterIcon} />
         <span>Color by EBC: {this.state.ebcValue}</span>
         <input
           type='range'

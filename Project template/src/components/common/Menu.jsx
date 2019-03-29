@@ -22,7 +22,7 @@ const Menu = (props) => {
       </div>
       <div className='menu-navigation'>
         <nav>
-          <ul>
+          <ul className='menu-navigation-list'>
             <NavLink className='menu-home-link' to='/'> 
               <li className='menu-home'>
                 <img className='menu-home-image' src={homeImage} />

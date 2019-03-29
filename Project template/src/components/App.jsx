@@ -27,8 +27,10 @@ class App extends React.PureComponent {
       this.switchToBeerDetails();
     }
 
+    const rootElement = this.environmentHelper();
+
     window.onscroll = () => {
-      const nextItemsRequested = Math.round(window.innerHeight + document.documentElement.scrollTop)
+      const nextItemsRequested = Math.round(window.innerHeight + rootElement.scrollTop)
       === document.documentElement.offsetHeight &&
       window.location.hash === HOME_LOCATION;
 
@@ -37,6 +39,12 @@ class App extends React.PureComponent {
         this.updateRequestParams();
       }
     }
+  }
+
+  environmentHelper = () => {
+    const isIE = false || !!document.documentMode;
+    const isEdge = !isIE && !!window.StyleMedia;
+    return isEdge ? document.body : document.documentElement;
   }
 
   particularBeerSelected = () => {

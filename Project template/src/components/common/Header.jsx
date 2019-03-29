@@ -8,19 +8,24 @@ import {
 } from '../../constants';
 import './Header.css';
 
-const Header = (props) => (
-  <header className="Header">
+const Header = (props) => {
+  const isHome = window.location.hash === HOME_LOCATION;
+  const isFavoritePage = window.location.hash.split('/')[1] === FAVORITE_LOCATION;
+  const isDetails = window.location.hash.split('/')[1] === DETAILS_LOCATION;
+
+  return(
+    <header className="Header">
     <MenuButton
       favorite={props.favorite}
       favoritePage={props.favoritePage}
     />
-    {window.location.hash === HOME_LOCATION &&
+    {isHome &&
       <h1 className='header-tagline home'>Beer catalog</h1>
     }
-    {window.location.hash.split('/')[1] === FAVORITE_LOCATION &&
+    {isFavoritePage &&
       <h1 className='header-tagline favorite'>Favorite beers</h1>
     }
-    {window.location.hash.split('/')[1] === DETAILS_LOCATION &&
+    {isDetails &&
       <h1 className='header-tagline details'>{props.exactBeer.name}</h1>
     }
     {window.location.hash === HOME_LOCATION && 
@@ -31,6 +36,8 @@ const Header = (props) => (
       />
     }
   </header>
-);
+  );
+  
+};
 
 export default Header;

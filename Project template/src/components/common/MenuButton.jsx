@@ -18,12 +18,12 @@ class MenuButton extends React.PureComponent {
   render() {
     return (
       <div 
-        className="Container"
+        className="menu-button-container"
         onClick={this.openMenu}
       >
-        <div className="Bars" />
-        <div className="Bars" />
-        <div className="Bars" /> 
+        <div className="bars" />
+        <div className="bars" />
+        <div className="bars" /> 
         <Menu
           className={(this.state.isMenuHidden ? '' : ' active')}
           favorite={this.props.favorite}

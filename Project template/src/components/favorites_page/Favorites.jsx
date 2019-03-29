@@ -20,8 +20,8 @@ class FavoritesPage extends React.PureComponent {
   render() {
     return(
       <div className='search-result'>
-        {this.props.pageInfo && 
-          this.props.pageInfo.thisPageBeers.map(item => (
+        {this.props.pageInfo && this.props.pageInfo.thisPageBeers.length !== 0 ?
+          (this.props.pageInfo.thisPageBeers.map(item => (
             <FavoriteBeer 
               key={item.id} item={item} 
               favorite={this.props.favorite}
@@ -30,7 +30,10 @@ class FavoritesPage extends React.PureComponent {
               getExactBeer={this.props.getExactBeer}
               favoritePage={this.props.favoritePage}
             />
-          ))
+          ))) : 
+          <h1 className='no-items-placeholder'>
+            You don't have favorite beers yet. Try adding some :)
+          </h1>
         }
         <Paginator
           favorite={this.props.favorite}

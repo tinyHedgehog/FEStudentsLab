@@ -26,7 +26,7 @@ const BeerDescription = (props) => {
     </NavLink>
     {!props.isFavorite && 
       <button 
-        className='beer-buttons-favor' 
+        className='beer-buttons-favorite' 
         onClick={addToFavorite}
       >
       Favorite
@@ -34,7 +34,7 @@ const BeerDescription = (props) => {
     }
     {props.isFavorite && 
       <button 
-        className='beer-buttons-favor'
+        className='beer-buttons-favorite'
         onClick={removeFromFavorite}
       >
       Remove Favorite

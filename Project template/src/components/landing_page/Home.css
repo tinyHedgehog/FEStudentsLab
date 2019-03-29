@@ -37,6 +37,11 @@
     height: 3.4vh;
 }
 
+.no-items-placeholder {
+    margin-top: 1vh;
+    font-size: 2.5vh;
+}
+
 @media screen and (max-width: 1050px) {
     .up-panel-text {
         font-size: 0;

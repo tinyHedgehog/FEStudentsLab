@@ -46,8 +46,8 @@ class SearchBar extends React.PureComponent {
             onChange={this.createSearchRequest}
             onKeyDown={this.searchBeers}
           />
-          <span className="label">Search beers...</span>
-          <span className="border"></span>
+          <span className="search-label">Search beers...</span>
+          <span className="search-border"></span>
           <input type='image'
             className='search-icon'  
             src={searchIcon} 

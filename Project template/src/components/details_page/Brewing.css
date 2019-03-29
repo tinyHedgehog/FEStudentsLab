@@ -7,12 +7,60 @@
 }
 
 .ingredients {
+    list-style-type: none;
+    padding: 0;
     width: 24%;
     margin-right: 3.5%;
 }
 
+.ingredients-description-container {
+    list-style-type: none;
+    padding: 0;
+}
+
+.ingredients-description-list {
+    border: 1px solid rgb(133, 133, 133);
+    border-bottom: none;
+    padding: 3%;
+}
+
+.ingredients-description-list:last-child {
+    border-bottom: 1px solid rgb(133, 133, 133);
+}
+
+.ingredients-description {
+    border: none;
+    color: rgb(128, 128, 128);
+    padding: 3%;
+    padding-left: 0;
+}
+
 .method {
+    list-style-type: none;
+    padding: 0;
     width: 22%;
+}
+
+.method-description-container {
+    list-style-type: none;
+    padding: 0;
+}
+
+.method-description-list {
+    border: 1px solid rgb(133, 133, 133);
+    border-bottom: none;
+    padding: 3%;
+}
+
+.method-description-list:last-child {
+    border-bottom: 1px solid rgb(133, 133, 133);
+}
+
+.method-description {
+    border: none;
+    color: rgb(128, 128, 128);
+    padding: 3%;
+    padding-left: 0;
 }
 
 .brewing-tips {

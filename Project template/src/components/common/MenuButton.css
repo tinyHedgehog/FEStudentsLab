@@ -1,11 +1,11 @@
-.Container {
+.menu-button-container {
     display: inline-block;
     cursor: pointer;
     margin-right: 1vw;
     margin-left: 1vw;
 }
   
-.Bars {
+.bars {
     width: 1.7vw;
     height: 0.33vh;
     background-color: rgb(218, 218, 218);
@@ -14,7 +14,7 @@
 }
 
 @media screen and (max-width: 1024px) {
-    .Bars {
+    .bars {
         margin-right: 2.5vw;
         margin-left: 2.5vw;
         width: 4vw;
@@ -22,13 +22,13 @@
 }
 
 @media screen and (max-width: 640px) {
-    .Bars {
+    .bars {
         width: 6vw;
     }
 }
 
 @media screen and (max-width: 360px) {
-    .Bars {
+    .bars {
         width: 6vw;
     }
 }

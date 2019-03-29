@@ -50,16 +50,16 @@ class Paginator extends React.PureComponent {
     }
 
     const renderPageNumbers = pageNumbers.map(number => {
-        return (
-          <li
-            className='page-number'
-            key={number}
-            id={number}
-            onClick={this.favoritePage}
-          >
-            {number}
-          </li>
-        );
+      return (
+        <li
+          className='page-number'
+          key={number}
+          id={number}
+          onClick={this.favoritePage}
+        >
+          {number}
+        </li>
+      );
     });
 
     return(

@@ -1,4 +1,4 @@
-.favorite-beer {
+.favbeer {
     width: 65vw;
     height: 16vh;
     margin-top: 0.8vh;
@@ -30,7 +30,7 @@
     margin-bottom: 1%;
 }
 
-.favorite-beer:hover {
+.favbeer:hover {
     border-color: rgba(82, 168, 236, 0.8);
     outline: 0;
     outline: thin dotted \9;
@@ -85,7 +85,7 @@
         padding-top: 1.8vh;
     }
 
-    .favorite-beer {
+    .favbeer {
         height: 20vh;
     }
 
@@ -100,7 +100,7 @@
         padding-bottom: 10vh;
     }
 
-    .favorite-beer {
+    .favbeer {
         height: 25vh;
     }
 
@@ -114,7 +114,7 @@
         padding-bottom: 10vh;
     }
 
-    .favorite-beer {
+    .favbeer {
         height: 33vh;
     }
 
