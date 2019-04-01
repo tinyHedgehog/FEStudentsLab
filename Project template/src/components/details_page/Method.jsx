@@ -3,22 +3,25 @@ import React from 'react';
 const Method = (props) => {
   return(
     <ul className='method'><h2>Method</h2>
-      <li>Mash
-        <ul>
+      <li className='method-description-list'>Mash
+        <ul className='method-description-container'>
           {props.method.mash_temp.map((mash, index) => {
-            return <li key={`mash_${index}`} className='nested-li'>{mash.duration} minutes at {mash.temp.value} &#8451;</li>
+            if(mash.duration){
+              return <li key={`mash_${index}`} className='method-description'>{mash.duration} minutes at {mash.temp.value} &#8451;</li>
+            }
+            return <li key={`mash_${index}`} className='method-description'>N/A minutes at {mash.temp.value} &#8451;</li>;
           })}
         </ul>
       </li>
-      <li>Fermentation
-        <ul>
-          <li className='nested-li'>Perform at {props.method.fermentation.temp.value} &#8451;</li>
+      <li className='method-description-list'>Fermentation
+        <ul className='method-description-container'>
+          <li className='method-description'>Perform at {props.method.fermentation.temp.value} &#8451;</li>
         </ul>
       </li>
       {props.method.twist && 
-      <li>Twist
-        <ul>
-          <li className='nested-li'>
+      <li className='method-description-list'>Twist
+        <ul className='method-description-container'>
+          <li className='method-description'>
             {props.method.twist}
           </li>
         </ul>

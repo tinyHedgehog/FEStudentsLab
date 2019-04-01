@@ -6,7 +6,7 @@ import './Paginator.css';
 class Paginator extends React.PureComponent {
   constructor(props) {
     super(props);
-  
+
     this.state = {
       currentPage: this.props.currentPage,
       beersPerPage: BEERS_PER_PAGE,
@@ -23,7 +23,7 @@ class Paginator extends React.PureComponent {
       this.props.favorite
     )
   }
-    
+
   handleLeftArrowClick = () => {
     if(this.state.currentPage !== 1) {
       this.props.favoritePage(
@@ -32,7 +32,7 @@ class Paginator extends React.PureComponent {
       )
     }
   }
-    
+
   handleRightArrowClick = () => {
     if(this.state.currentPage !== this.state.maxPagesNumber){
       this.props.favoritePage(
@@ -42,7 +42,7 @@ class Paginator extends React.PureComponent {
     }
   }
 
-  render() {
+  render() {   
     const pageNumbers = [];
 
     for(let i = 1; i <= this.state.maxPagesNumber; i++) {
@@ -50,16 +50,16 @@ class Paginator extends React.PureComponent {
     }
 
     const renderPageNumbers = pageNumbers.map(number => {
-        return (
-          <li
-            className='page-number'
-            key={number}
-            id={number}
-            onClick={this.favoritePage}
-          >
-            {number}
-          </li>
-        );
+      return (
+        <li
+          className='page-number'
+          key={number}
+          id={number}
+          onClick={this.favoritePage}
+        >
+          {number}
+        </li>
+      );
     });
 
     return(
@@ -83,4 +83,4 @@ class Paginator extends React.PureComponent {
   }
 }
 
-export default Paginator;
+export default Paginator; 

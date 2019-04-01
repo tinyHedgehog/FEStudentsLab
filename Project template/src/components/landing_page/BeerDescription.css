@@ -1,25 +1,70 @@
-.beer-description{
-    align-self: flex-end;
+.beer-description {
     background-color: rgb(110, 110, 110);
     color: rgb(255, 255, 255);
     width: 90%;
-    height: 170px;
+    height: 19.9vh;
     padding: 5%;
+    overflow: auto;
 }
 
-.beer-buttons{    
-    border: none;
-    background-color: rgb(110, 110, 110);
-    color: rgb(255, 255, 255);
-    cursor: pointer;
-    margin-right: 3%;
-    text-transform: uppercase;
-}
-
-p{
+.beer-title {
+    font-size: 2.5vh;
     margin-bottom: 3.5%;
 }
 
-.beer-title{
-    font-size: 22px;
+.beer-tagline {
+    font-size: 1.7vh; 
+    margin-bottom: 3.5%;
+}
+
+.beer-buttons-open {
+    border: none;
+    font-size: 1.7vh; 
+    color: rgb(255, 255, 255);
+    background-color: rgb(110, 110, 110);
+    cursor: pointer;
+    margin-right: 3%;
+    padding: 1px 3px 1px 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: 0.4s ease-in-out;
+}
+
+.beer-buttons-open:hover {
+    background: rgba(82,168,236,.6);
+}
+
+.beer-buttons-favorite {
+    border: none;
+    font-size: 1.7vh; 
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(255, 255, 255);
+    background-color: rgb(110, 110, 110);
+    cursor: pointer;
+    padding: 1px 3px 1px 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: 0.6s ease-in-out;
+}
+
+.beer-buttons-favorite:hover {
+    background: rgba(82,168,236,.6);
+}
+
+@media screen and (max-width: 1024px) {
+    .beer-description {
+        height: 45.2%;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .beer-description {
+        margin-bottom: 5%;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .beer-description {
+        height: 18.9vh;
+    }
 }

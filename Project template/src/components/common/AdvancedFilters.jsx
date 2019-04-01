@@ -1,4 +1,5 @@
 import React from 'react';
+import filterIcon from './filter_icon.png';
 import './AdvancedFilters.css';
 
 class AdvancedFilters extends React.PureComponent {
@@ -33,7 +34,8 @@ class AdvancedFilters extends React.PureComponent {
     };
 
     return (
-      <div className='advanced-filters'>
+      <div className={'advanced-filters' + this.props.className}>
+        <img className='advanced-filters-icon first-icon' src={filterIcon} />
         <span>Alcohol by volume: {this.state.abvValue}</span>
         <input
           type='range'
@@ -42,9 +44,10 @@ class AdvancedFilters extends React.PureComponent {
           value={this.state.abvValue}
           onChange={this.changeFilterValue}
           onMouseUp={this.applyFilters}
-          className='slider'
+          className='advanced-filters-slider'
           id='abvValue'
         />
+        <img className='advanced-filters-icon second-icon' src={filterIcon} />
         <span>International Bitterness Units: {this.state.ibuValue}</span>
         <input
           type='range'
@@ -53,9 +56,10 @@ class AdvancedFilters extends React.PureComponent {
           value={this.state.ibuValue}
           onChange={this.changeFilterValue}
           onMouseUp={this.applyFilters}
-          className='slider'
+          className='advanced-filters-slider'
           id='ibuValue'
         />
+        <img className='advanced-filters-icon third-icon' src={filterIcon} />
         <span>Color by EBC: {this.state.ebcValue}</span>
         <input
           type='range'
@@ -64,7 +68,7 @@ class AdvancedFilters extends React.PureComponent {
           value={this.state.ebcValue}
           onChange={this.changeFilterValue}
           onMouseUp={this.applyFilters}
-          className='slider'
+          className='advanced-filters-slider'
           id='ebcValue'
         />
       </div>

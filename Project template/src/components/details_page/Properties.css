@@ -1,7 +1,48 @@
-ul.properties{
-    margin-right: 16%;
+.properties {
+    list-style-type: none;
+    padding: 0;
+    width: 24%;
+    margin-right: 3.5%;
 }
 
-.info-icon{
-    width: 15px;
+.properties-description {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 1px solid rgb(133, 133, 133);
+    border-bottom: none;
+    padding: 3%;
+}
+
+.properties-description:last-child {
+    border-bottom: 1px solid rgb(133, 133, 133);
+}
+
+.properties-info-icon {
+    height: 16px;
+    margin-bottom: 2px;
+    margin-left: 5px;
+}
+
+.property-value {
+    color: rgb(255, 255, 255);
+    background-color: rgb(110, 110, 110);
+    margin-right: 5%;
+    margin-left: auto;
+    padding: 5px 10px 5px 10px;
+    border: none;
+    border-radius: 35%;
+}
+
+@media screen and (max-width: 1050px) {
+    .properties {
+        width: 100%;
+        margin-bottom: 3vh;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .properties {
+        padding-right: 0;
+    }
 }

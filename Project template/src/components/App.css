@@ -1,9 +1,9 @@
-.app{
+.app {
     width: 100%;
     height: 100%;
 }
 
-.search-result{
+.search-result {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

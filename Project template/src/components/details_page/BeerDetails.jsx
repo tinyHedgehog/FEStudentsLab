@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import CommonBeerInfo from './CommonBeerInfo';
 import Properties from './Properties';
 import FoodPairing from './FoodPairing';
@@ -8,7 +8,7 @@ import './BeerDetails.css';
 const BeerDetails = (props) => {
   return(
     <div className='details-page'>
-      {props.item && <Fragment>
+      {props.item && <div>
         <CommonBeerInfo
         item={props.item}
         title={props.item.name} 
@@ -33,7 +33,7 @@ const BeerDetails = (props) => {
         ingredients={props.item.ingredients}
         method={props.item.method}
       />
-      </Fragment>
+      </div>
       }
     </div>
   );

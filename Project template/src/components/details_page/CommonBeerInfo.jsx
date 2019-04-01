@@ -14,14 +14,14 @@ const CommonBeerInfo = (props) => {
   return(
     <div className='common-beer-info'>
       {props.img == undefined ?
-      <img className='beer-details-img' src={defaultImg} /> :
-      <img className='beer-details-img' src={props.img} />
+        <img className='beer-details-img' src={defaultImg} /> :
+        <img className='beer-details-img' src={props.img} />
       }
       <h2>{props.title}</h2>
-      <p>{props.tagline}</p>
+      <p className='beer-details-tagline'>{props.tagline}</p>
       {!props.isFavorite &&
         <button
-          className='beer-buttons-description'
+          className='beer-details-buttons'
           onClick={addToFavorite}
         >
         Add to favorites
@@ -29,11 +29,11 @@ const CommonBeerInfo = (props) => {
       }
       {props.isFavorite &&
         <button
-          className='beer-buttons-description'
+          className='beer-details-buttons'
           onClick={removeFromFavorite}
         >Remove from favorites</button>
       }
-      <p className='description-paragraph'>{props.description}</p>
+      <p className='beer-details-description-paragraph'>{props.description}</p>
     </div>
   )
 }

@@ -7,7 +7,7 @@ const Brewing = (props) => {
   return(
     <div className='brewing'>
         <h2>Brewing</h2>
-        <p className='brewers-tips'>{props.brewersTips}</p>
+        <p className='brewing-tips'>{props.brewersTips}</p>
         <div className='brewing-description'>
           <Ingredients boilVolume={props.boilVolume} ingredients={props.ingredients} />
           <Method method={props.method} />

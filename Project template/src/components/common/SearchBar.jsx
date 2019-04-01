@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import AdvancedFilters from './AdvancedFilters';
-import searchIcon from './search_icon.png';
 import {
   ENTER,
   LEFT_MOUSE_BUTTON
-} from '../../constants'
+} from '../../constants';
+import searchIcon from './search_icon.png';
 import './SearchBar.css';
 
 class SearchBar extends React.PureComponent {
@@ -39,25 +39,28 @@ class SearchBar extends React.PureComponent {
 
   render() {
     return (
-      <div className='search-container'>
+      <Fragment>
         <div className='search-align'>
-          <input type='text' placeholder='Search beers...' 
+          <input type='text' placeholder='&nbsp;' 
             className='search-input'
             onChange={this.createSearchRequest}
             onKeyDown={this.searchBeers}
           />
+          <span className="search-label">Search beers...</span>
+          <span className="search-border"></span>
           <input type='image'
             className='search-icon'  
             src={searchIcon} 
             onClick={this.searchBeers} />
-          <input type='button' 
-            value='Advanced Filters' 
+          <a className='filters-button'
+            type='button'
             onClick={this.showFilters} />
         </div> 
-        {!this.state.areFiltersHidden && 
-          <AdvancedFilters applyFilters={this.props.applyFilters} />
-        }
-      </div>
+        <AdvancedFilters
+          className={this.state.areFiltersHidden ? '' : ' active'}
+          applyFilters={this.props.applyFilters}
+        />
+      </Fragment>
     );
   }
 }

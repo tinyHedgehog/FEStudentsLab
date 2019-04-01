@@ -1,9 +1,137 @@
-.menu{
+.menu {
     position: absolute;
-    top: 50px;
-    z-index: 10;
+    top: 0;
+    left: -100vh;
+    width: 20%;
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+    border-right: 1px solid rgba(143, 143, 143, 0.6);
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 12px rgba(143, 143, 143, 0.6);
+    -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 12px rgba(143, 143, 143, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 12px rgba(143, 143, 143, 0.6);
+    z-index: 50;
+    opacity: 1.0;
+    transition: 0.8s ease-in-out;
 }
 
-.menu-li{
+.menu.active {
+    transform: translateX(100vh)
+}
+
+.menu-header {
+    position: relative;
+    width: 100%;
+    height: 17%;
+    color: rgb(255, 255, 255);
+    background-image: linear-gradient(to bottom right, rgba(15, 41, 90), 75%, rgba(98, 153, 255, 1));
+    font-size: 3vh;
+}
+
+.menu-navigation-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu-header-text {
+    position: relative;
+    top: 2vh;
+    left: 2vh;
+}
+
+.menu-navigation {
+    height: 83%;
+}
+
+.menu-home {
     border: none;
+    font-size: 2.3vh;
+    text-decoration: none;
+    border-top: 2px solid rgb(18, 15, 160);
+    border-bottom: 2px solid rgb(18, 15, 160);
+    transition: 0.4s ease-in-out;
+    padding: 3%;
+}
+
+.menu-home:hover {
+    padding-left: 1vw;
+    color: rgb(255, 255, 255);
+    background-color: rgb(18, 15, 160);
+}
+
+.menu-home:hover > .menu-home-image {
+    filter: invert(100%);
+}
+
+.menu-home-link {
+    color: rgb(0,0,0);
+    text-decoration: none;
+}
+
+.menu-home-image {
+    position: relative;
+    left: 5px;
+    height: 2.2vh;
+    transition: 0.4s ease-in-out;
+}
+
+.menu-home-text {
+    position: relative;
+    left: 1.1vw;
+}
+
+.menu-favorite {
+    border: none;
+    border-bottom: none;
+    font-size: 2.3vh;
+    text-decoration: none;
+    transition: 0.4s ease-in-out;
+    border-bottom: 2px solid rgb(18, 15, 160);
+    padding: 3%;
+}
+
+.menu-favorite:hover {
+    color: rgb(255, 255, 255);
+    padding-left: 1vw;
+    background-color: rgb(18, 15, 160);
+}
+
+.menu-favorite:hover > .menu-favorite-image {
+    filter: invert(100%);
+}
+
+.menu-favorite-link {
+    color: rgb(0,0,0);
+    text-decoration: none;
+}
+
+.menu-favorite-image {
+    position: relative;
+    left: 5px;
+    height: 2.1vh;
+    transition: 0.4s ease-in-out;
+}
+
+.menu-favorite-text {
+    position: relative;
+    left: 1.1vw;
+}
+
+@media screen and (max-width: 1024px) {
+    .menu {
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .menu {
+        width: 80%;
+    }
+
+    .menu-home-text{
+        left: 4vw;
+    }
+
+    .menu-favorite-text{
+        left: 4vw;
+    }
 }
